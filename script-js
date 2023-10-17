@@ -17,5 +17,27 @@ function getPlayerChoice() {
     let playerChoice = prompt('Select your weapon', '');
     return playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
 }
-console.log(getComputerChoice());
-console.log(getPlayerChoice());
+
+// Write a function that plays a single round of Rock Paper Scissors.
+
+function singleRound(playerSelection, computerSelection) {
+    if (playerSelection === 'Rock'  && computerSelection === 'Scissor') {
+        return 'You Won! Rock beats Scissor';        
+    } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
+        return 'You Won! Paper beats Rock';
+    } else if (playerSelection === 'Scissor' && computerSelection === 'Paper') {
+        return 'You Won! Scissor beats Paper';
+    } else if (playerSelection === computerSelection) {
+        return 'Round tied!';
+    } else if (playerSelection === 'Scissor'  && computerSelection === 'Rock') {
+        return 'You Lost! Rock beats Scissor';        
+    } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
+        return 'You Lost! Paper beats Rock';
+    } else if (playerSelection === 'Paper' && computerSelection === 'Scissor') {
+        return 'You Lost! Scissor beats Paper';
+    }
+}
+
+const playerSelection = getPlayerChoice();
+const computerSelection = getComputerChoice();
+console.log(singleRound(playerSelection, computerSelection));
