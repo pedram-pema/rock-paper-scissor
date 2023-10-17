@@ -14,11 +14,8 @@ function getComputerChoice() {
 // WRITE A FUNCTION TO GET THE PLAYER'S CHOICE
 
 function getPlayerChoice() {
-    const playerChoice = prompt('Please selcet your weapon', '')
+    let playerChoice = prompt('Select your weapon', '');
+    return playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
 }
-
-// TEST CODE TO RUN FUNCTIONS
-getComputerChoice();
 console.log(getComputerChoice());
-getPlayerChoice();
 console.log(getPlayerChoice());
