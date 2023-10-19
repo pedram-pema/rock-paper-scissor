@@ -13,22 +13,14 @@ function getComputerChoice() {
 
 // WRITE A FUNCTION TO GET THE PLAYER'S CHOICE
 
-// function getPlayerChoice() {
-//     let playerChoice = prompt('Select your weapon', '');
-//     return playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
-// }
+function getPlayerChoice() {
+    let playerChoice = prompt('Select your weapon', '');
+    return playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
+}
 
 // WRITE A FUNCTION THAT PLAYS A SINGLE ROUND OF ROCK PAPER SCISSORS.
 
 function singleRound(playerSelection, computerSelection) {
-    function getPlayerChoice() {
-        let playerChoice = prompt('Select your weapon', '');
-        return playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
-    }
-    getPlayerChoice();
-    getComputerChoice();
-    // const playerSelection = getPlayerChoice();
-    // const computerSelection = getComputerChoice();
 
     if (playerSelection === 'Rock'  && computerSelection === 'Scissor') {
         return 'You Won! Rock beats Scissor';        
@@ -47,30 +39,30 @@ function singleRound(playerSelection, computerSelection) {
     }
 }
 
-// const playerSelection = getPlayerChoice();
-// const computerSelection = getComputerChoice();
-// singleRound();
-console.log(singleRound());
-
 // WRITE A FUNCTION CALLED GAME() THAT KEEPS A SCORE AND REPORTS WINNER AT THE END
 
-// function game() {
-//     const playerSelection = getPlayerChoice();
-//     const computerSelection = getComputerChoice();
+function game() {
+    let playerSelection;
+    let computerSelection;
     
-//     singleRound(playerSelection, computerSelection);
-//     console.log(singleRound(playerSelection, computerSelection));
+    playerSelection = getPlayerChoice();
+    computerSelection = getComputerChoice();
+    console.log(singleRound(playerSelection, computerSelection));
 
-//     singleRound(playerSelection, computerSelection);
-//     console.log(singleRound(playerSelection, computerSelection));
+    playerSelection = getPlayerChoice();
+    computerSelection = getComputerChoice();
+    console.log(singleRound(playerSelection, computerSelection));
 
-//     singleRound(playerSelection, computerSelection);
-//     console.log(singleRound(playerSelection, computerSelection));
+    playerSelection = getPlayerChoice();
+    computerSelection = getComputerChoice();
+    console.log(singleRound(playerSelection, computerSelection));
 
-//     singleRound(playerSelection, computerSelection);
-//     console.log(singleRound(playerSelection, computerSelection));
+    playerSelection = getPlayerChoice();
+    computerSelection = getComputerChoice();
+    console.log(singleRound(playerSelection, computerSelection));
 
-//     singleRound(playerSelection, computerSelection);
-//     console.log(singleRound(playerSelection, computerSelection));
-// }
-// game();
+    playerSelection = getPlayerChoice();
+    computerSelection = getComputerChoice();
+    console.log(singleRound(playerSelection, computerSelection));
+}
+game();
