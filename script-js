@@ -17,44 +17,38 @@ function getPlayerChoice() {
 }
 
 // WRITE A FUNCTION THAT PLAYS A SINGLE ROUND OF ROCK PAPER SCISSORS.
-let playerScore1 = 0;
-let playerScore2 = 0;
-let playerScore3 = 0;
-let computerScore1 = 0;
-let computerScore2 = 0;
-let computerScore3 = 0;
-let tieScore1 = 0;
-let tieScore2 = 0;
-let tieScore3 = 0;
+let playerScore = 0;
+let computerScore = 0;
+let tieScore = 0;
 //variables above are declared to be used for counting score at the end of match and each round
 
 function singleRound(playerSelection, computerSelection) {
     if (playerSelection === 'Rock'  && computerSelection === 'Scissor') {
-        playerScore1 = 1;
+        playerScore++;
         return 'You Won! Rock beats Scissor';        
     } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
-        playerScore2 = 1;
+        playerScore++;
         return 'You Won! Paper beats Rock';
     } else if (playerSelection === 'Scissor' && computerSelection === 'Paper') {
-        playerScore3 = 1;
+        playerScore++;
         return 'You Won! Scissor beats Paper';
     } else if (playerSelection === 'Rock' && computerSelection === 'Rock') {
-        tieScore1 = 1;
+        tieScore++;
         return 'Round tied!';
     } else if (playerSelection === 'Paper' && computerSelection === 'Paper') {
-        tieScore2 = 1;
+        tieScore++;
         return 'Round tied!';
     } else if (playerSelection === 'Scissor' && computerSelection === 'Scissor') {
-        tieScore3 = 1;
+        tieScore++;
         return 'Round tied!';
     } else if (playerSelection === 'Scissor'  && computerSelection === 'Rock') {
-        computerScore1 = 1;
+        computerScore++;
         return 'You Lost! Rock beats Scissor';        
     } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
-        computerScore2 = 1;
+        computerScore++;
         return 'You Lost! Paper beats Rock';
     } else if (playerSelection === 'Paper' && computerSelection === 'Scissor') {
-        computerScore3 = 1;
+        computerScore++;
         return 'You Lost! Scissor beats Paper';
     }
 }
@@ -84,7 +78,7 @@ function game() {
     computerSelection = getComputerChoice();
     console.log(singleRound(playerSelection, computerSelection));
 
-    if (playerScore1 + playerScore2 + playerScore3 === 3 ||
+/*     if (playerScore1 + playerScore2 + playerScore3 === 3 ||
         playerScore1 + playerScore2 + playerScore3 > computerScore1 + computerScore2 + computerScore3 &&
         playerScore1 + playerScore2 + playerScore3 >= tieScore1 + tieScore2 + tieScore3) {
         console.log('MEGA JOB! You have defeated the computer');
@@ -95,7 +89,8 @@ function game() {
         console.log('CRY NOW! Computer has beaten you!');
     } else {
         console.log('BOOORIN! Game tied');
-    }
+    } */
+
     // live commentory: you are ahaed; sum of all scores and then using comparison to report the game 
 }
 game();
