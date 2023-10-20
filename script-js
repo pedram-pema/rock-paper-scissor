@@ -1,5 +1,4 @@
 // WRITE A FUNCTION TO GET THE COMPUTER'S CHOICE
-
 function getComputerChoice() {
     const randomChoice = Math.floor(Math.random() * 3);
     if (randomChoice === 0) {
@@ -12,14 +11,12 @@ function getComputerChoice() {
 }
 
 // WRITE A FUNCTION TO GET THE PLAYER'S CHOICE
-
 function getPlayerChoice() {
     let playerChoice = prompt('Select your weapon', '');
     return playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
 }
 
 // WRITE A FUNCTION THAT PLAYS A SINGLE ROUND OF ROCK PAPER SCISSORS.
-
 let playerScore1 = 0;
 let playerScore2 = 0;
 let playerScore3 = 0;
@@ -32,8 +29,6 @@ let tieScore3 = 0;
 //variables above are declared to be used for counting score at the end of match and each round
 
 function singleRound(playerSelection, computerSelection) {
-
-
     if (playerSelection === 'Rock'  && computerSelection === 'Scissor') {
         playerScore1 = 1;
         return 'You Won! Rock beats Scissor';        
@@ -64,9 +59,7 @@ function singleRound(playerSelection, computerSelection) {
     }
 }
 
-
 // WRITE A FUNCTION CALLED GAME() THAT KEEPS A SCORE AND REPORTS WINNER AT THE END
-
 function game() {
     let playerSelection;
     let computerSelection;
@@ -91,16 +84,18 @@ function game() {
     computerSelection = getComputerChoice();
     console.log(singleRound(playerSelection, computerSelection));
 
-    if (playerScore1 + playerScore2 + playerScore3 > computerScore1 + computerScore2 + computerScore3 && playerScore1 + playerScore2 + playerScore3 >= tieScore1 + tieScore2 + tieScore3) {
+    if (playerScore1 + playerScore2 + playerScore3 === 3 ||
+        playerScore1 + playerScore2 + playerScore3 > computerScore1 + computerScore2 + computerScore3 &&
+        playerScore1 + playerScore2 + playerScore3 >= tieScore1 + tieScore2 + tieScore3) {
         console.log('MEGA JOB! You have defeated the computer');
-        // ***************** HOW TO BREAK LINE IN AN IF CONDITION???????????????? *****************
-    } else if (computerScore1 + computerScore2 + computerScore3 > playerScore1 + playerScore2 + playerScore3 && computerScore1 + computerScore2 + computerScore3 >= tieScore1 + tieScore2 + tieScore3) {
+        
+    } else if (computerScore1 + computerScore2 + computerScore3 === 3 ||
+        computerScore1 + computerScore2 + computerScore3 > playerScore1 + playerScore2 + playerScore3 && 
+        computerScore1 + computerScore2 + computerScore3 >= tieScore1 + tieScore2 + tieScore3 ) {
         console.log('CRY NOW! Computer has beaten you!');
     } else {
         console.log('BOOORIN! Game tied');
     }
-
-    //game must end when each side reaches to 3
-    // live commentory: you are ahaed 
+    // live commentory: you are ahaed; sum of all scores and then using comparison to report the game 
 }
 game();
