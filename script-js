@@ -70,27 +70,39 @@ function game() {
     computerSelection = getComputerChoice();
     console.log(singleRound(playerSelection, computerSelection));
 
-    playerSelection = getPlayerChoice();
-    computerSelection = getComputerChoice();
-    console.log(singleRound(playerSelection, computerSelection));
+    if (playerScore === 3) {
+        return console.log('MEGA JOB! You have defeated the computer');
+    } else if (computerScore === 3) {
+        return console.log('CRY NOW! Computer has beaten you!');
+    }
 
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
     console.log(singleRound(playerSelection, computerSelection));
 
-/*     if (playerScore1 + playerScore2 + playerScore3 === 3 ||
-        playerScore1 + playerScore2 + playerScore3 > computerScore1 + computerScore2 + computerScore3 &&
-        playerScore1 + playerScore2 + playerScore3 >= tieScore1 + tieScore2 + tieScore3) {
-        console.log('MEGA JOB! You have defeated the computer');
-        
-    } else if (computerScore1 + computerScore2 + computerScore3 === 3 ||
-        computerScore1 + computerScore2 + computerScore3 > playerScore1 + playerScore2 + playerScore3 && 
-        computerScore1 + computerScore2 + computerScore3 >= tieScore1 + tieScore2 + tieScore3 ) {
-        console.log('CRY NOW! Computer has beaten you!');
-    } else {
-        console.log('BOOORIN! Game tied');
-    } */
+    if (playerScore === 2 && tieScore === 2) {
+        return console.log('MEGA JOB! You have defeated the computer');
+    } else if (computerScore === 2 && tieScore === 2) {
+        return console.log('CRY NOW! Computer has beaten you!');
+    } else if (playerScore === 3) {
+        return console.log('MEGA JOB! You have defeated the computer');
+    } else if (computerScore === 3) {
+        return console.log('CRY NOW! Computer has beaten you!');
+    }
 
-    // live commentory: you are ahaed; sum of all scores and then using comparison to report the game 
+    playerSelection = getPlayerChoice();
+    computerSelection = getComputerChoice();
+    console.log(singleRound(playerSelection, computerSelection));
+
+    if (playerScore > computerScore) {
+        return console.log('MEGA JOB! You have defeated the computer');
+    } else if (computerScore > playerScore) {
+        return console.log('CRY NOW! Computer has beaten you!');
+    } else if (playerScore === computerScore) {
+        return console.log('BOOORIN! Game tied');
+    }
 }
 game();
+
+// live commentory: you are ahaed; sum of all scores and then using comparison to report the game 
+// invalid input
