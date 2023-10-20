@@ -64,9 +64,6 @@ function singleRound(playerSelection, computerSelection) {
     }
 }
 
-// CREATE A FUNCTION THAT KEEPS THE SCORE
-
-
 
 // WRITE A FUNCTION CALLED GAME() THAT KEEPS A SCORE AND REPORTS WINNER AT THE END
 
@@ -94,23 +91,16 @@ function game() {
     computerSelection = getComputerChoice();
     console.log(singleRound(playerSelection, computerSelection));
 
-
-    // if (playerScore1 + playerScore2 + playerScore3 === 3 ) {
-    //     console.log('MEGA JOB! You have defeated the computer');
-    // } else if (computerScore1 + computerScore2 + computerScore3 === 3) {
-    //     console.log('CRY NOW! Computer has beaten you!');
-    // } else if (tieScore1 + tieScore2 + tieScore3 === 3) {
-    //     console.log('BOOORIN! Game tied');
-    // }
-
     if (playerScore1 + playerScore2 + playerScore3 > computerScore1 + computerScore2 + computerScore3 && playerScore1 + playerScore2 + playerScore3 >= tieScore1 + tieScore2 + tieScore3) {
         console.log('MEGA JOB! You have defeated the computer');
+        // ***************** HOW TO BREAK LINE IN AN IF CONDITION???????????????? *****************
     } else if (computerScore1 + computerScore2 + computerScore3 > playerScore1 + playerScore2 + playerScore3 && computerScore1 + computerScore2 + computerScore3 >= tieScore1 + tieScore2 + tieScore3) {
         console.log('CRY NOW! Computer has beaten you!');
-    } else  {
+    } else {
         console.log('BOOORIN! Game tied');
     }
+
+    //game must end when each side reaches to 3
+    // live commentory: you are ahaed 
 }
 game();
-
-// if (tieScore1 + tieScore2 + tieScore3 === 3)
