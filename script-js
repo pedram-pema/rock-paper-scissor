@@ -25,13 +25,13 @@ let tieScore = 0;
 function singleRound(playerSelection, computerSelection) {
     if (playerSelection === 'Rock'  && computerSelection === 'Scissor') {
         playerScore++;
-        return 'You Won! Rock beats Scissor';        
+        return 'You Won the round! Rock beats Scissor';        
     } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
         playerScore++;
-        return 'You Won! Paper beats Rock';
+        return 'You Won the round! Paper beats Rock';
     } else if (playerSelection === 'Scissor' && computerSelection === 'Paper') {
         playerScore++;
-        return 'You Won! Scissor beats Paper';
+        return 'You Won the round! Scissor beats Paper';
     } else if (playerSelection === 'Rock' && computerSelection === 'Rock') {
         tieScore++;
         return 'Round tied!';
@@ -43,13 +43,13 @@ function singleRound(playerSelection, computerSelection) {
         return 'Round tied!';
     } else if (playerSelection === 'Scissor'  && computerSelection === 'Rock') {
         computerScore++;
-        return 'You Lost! Rock beats Scissor';        
+        return 'You Lost the round! Rock beats Scissor';        
     } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
         computerScore++;
-        return 'You Lost! Paper beats Rock';
+        return 'You Lost the round! Paper beats Rock';
     } else if (playerSelection === 'Paper' && computerSelection === 'Scissor') {
         computerScore++;
-        return 'You Lost! Scissor beats Paper';
+        return 'You Lost the round! Scissor beats Paper';
     }
 }
 
@@ -57,6 +57,8 @@ function singleRound(playerSelection, computerSelection) {
 function game() {
     let playerSelection;
     let computerSelection;
+    let playerScore;
+    let computerScore;
     
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
@@ -71,9 +73,9 @@ function game() {
     console.log(singleRound(playerSelection, computerSelection));
 
     if (playerScore === 3) {
-        return console.log('MEGA JOB! You have defeated the computer');
+        return console.log(`Flawless Victory! You have defeated the computer ${playerScrore}-${computerScore}.`);
     } else if (computerScore === 3) {
-        return console.log('CRY NOW! Computer has beaten you!');
+        return console.log(`Crushing Defeat! Computer has beaten you ${computerScore}-${playerScrore}.`);
     }
 
     playerSelection = getPlayerChoice();
@@ -81,13 +83,13 @@ function game() {
     console.log(singleRound(playerSelection, computerSelection));
 
     if (playerScore === 2 && tieScore === 2) {
-        return console.log('MEGA JOB! You have defeated the computer');
+        return console.log(`MEGA JOB! You have defeated the computer ${playerScrore}-${computerScore}.`);
     } else if (computerScore === 2 && tieScore === 2) {
-        return console.log('CRY NOW! Computer has beaten you!');
+        return console.log(`Huge Disappointment! Computer has beaten you ${computerScore}-${playerScrore}.`);
     } else if (playerScore === 3) {
-        return console.log('MEGA JOB! You have defeated the computer');
+        return console.log(`MEGA JOB! You have defeated the computer ${playerScrore}-${computerScore}.`);
     } else if (computerScore === 3) {
-        return console.log('CRY NOW! Computer has beaten you!');
+        return console.log(`Huge Disappointment! Computer has beaten you ${computerScore}-${playerScrore}.`);
     }
 
     playerSelection = getPlayerChoice();
@@ -95,11 +97,11 @@ function game() {
     console.log(singleRound(playerSelection, computerSelection));
 
     if (playerScore > computerScore) {
-        return console.log('MEGA JOB! You have defeated the computer');
+        return console.log(`Amazing effort! You have defeated the computer ${playerScrore}-${computerScore}.`);
     } else if (computerScore > playerScore) {
-        return console.log('CRY NOW! Computer has beaten you!');
+        return console.log(`That was close! Computer has beaten you! ${computerScore}-${playerScrore}.`);
     } else if (playerScore === computerScore) {
-        return console.log('BOOORIN! Game tied');
+        return console.log(`BOOORING! Game tied ${playerScrore}-${computerScore}.`);
     }
 }
 game();
