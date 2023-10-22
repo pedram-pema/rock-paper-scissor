@@ -12,7 +12,7 @@ function getComputerChoice() {
 
 // WRITE A FUNCTION TO GET THE PLAYER'S CHOICE
 function getPlayerChoice() {
-    let playerChoice = prompt('Select your weapon', '');
+    let playerChoice = prompt('Select your weapon', '');    
     return playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
 }
 
@@ -32,13 +32,7 @@ function singleRound(playerSelection, computerSelection) {
     } else if (playerSelection === 'Scissor' && computerSelection === 'Paper') {
         playerScore++;
         return 'You Won the round! Scissor beats Paper';
-    } else if (playerSelection === 'Rock' && computerSelection === 'Rock') {
-        tieScore++;
-        return 'Round tied!';
-    } else if (playerSelection === 'Paper' && computerSelection === 'Paper') {
-        tieScore++;
-        return 'Round tied!';
-    } else if (playerSelection === 'Scissor' && computerSelection === 'Scissor') {
+    } else if (playerSelection === computerSelection) {
         tieScore++;
         return 'Round tied!';
     } else if (playerSelection === 'Scissor'  && computerSelection === 'Rock') {
