@@ -23,7 +23,13 @@ let tieScore = 0;
 //variables above are declared to be used for counting score at the end of match and each round
 
 function singleRound(playerSelection, computerSelection) {
-    if (playerSelection === 'Rock'  && computerSelection === 'Scissor') {
+    if (playerSelection === computerSelection) {
+        tieScore++;
+        console.log('Round tied!');
+        playerSelection = getPlayerChoice();
+        computerSelection = getComputerChoice();
+        return (singleRound(playerSelection, computerSelection));
+    } else if (playerSelection === 'Rock'  && computerSelection === 'Scissor') {
         playerScore++;
         return 'You Won the round! Rock beats Scissor';        
     } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
@@ -32,9 +38,6 @@ function singleRound(playerSelection, computerSelection) {
     } else if (playerSelection === 'Scissor' && computerSelection === 'Paper') {
         playerScore++;
         return 'You Won the round! Scissor beats Paper';
-    } else if (playerSelection === computerSelection) {
-        tieScore++;
-        return 'Round tied!';
     } else if (playerSelection === 'Scissor'  && computerSelection === 'Rock') {
         computerScore++;
         return 'You Lost the round! Rock beats Scissor';        
@@ -47,76 +50,80 @@ function singleRound(playerSelection, computerSelection) {
     }
 }
 
+let playerSelection = getPlayerChoice();
+let computerSelection = getComputerChoice();
+console.log(singleRound(playerSelection, computerSelection));
+
 // WRITE A FUNCTION CALLED GAME() THAT KEEPS A SCORE AND REPORTS WINNER AT THE END
-function game() {
-    let playerSelection;
-    let computerSelection;
+// function game() {
+//     let playerSelection;
+//     let computerSelection;
     
-    playerSelection = getPlayerChoice();
-    computerSelection = getComputerChoice();
-    console.log(singleRound(playerSelection, computerSelection));
+//     playerSelection = getPlayerChoice();
+//     computerSelection = getComputerChoice();
+//     console.log(singleRound(playerSelection, computerSelection));
 
-    playerSelection = getPlayerChoice();
-    computerSelection = getComputerChoice();
-    console.log(singleRound(playerSelection, computerSelection));
+//     playerSelection = getPlayerChoice();
+//     computerSelection = getComputerChoice();
+//     console.log(singleRound(playerSelection, computerSelection));
 
-    playerSelection = getPlayerChoice();
-    computerSelection = getComputerChoice();
-    console.log(singleRound(playerSelection, computerSelection));
+//     playerSelection = getPlayerChoice();
+//     computerSelection = getComputerChoice();
+//     console.log(singleRound(playerSelection, computerSelection));
 
-    if (playerScore === 3) {
-        return console.log('Flawless Victory! You have defeated the computer 3-0.');
-    } else if (computerScore === 3) {
-        return console.log('Crushing Defeat! Computer has beaten you 0-3.');
-    }
+//     if (playerScore === 3) {
+//         return console.log('Flawless Victory! You have defeated the computer 3-0.');
+//     } else if (computerScore === 3) {
+//         return console.log('Crushing Defeat! Computer has beaten you 0-3.');
+//     }
 
-    playerSelection = getPlayerChoice();
-    computerSelection = getComputerChoice();
-    console.log(singleRound(playerSelection, computerSelection));
+//     playerSelection = getPlayerChoice();
+//     computerSelection = getComputerChoice();
+//     console.log(singleRound(playerSelection, computerSelection));
 
-    if (playerScore === 2 && tieScore === 2) {
-        return console.log('MEGA JOB! You have defeated the computer 2-0.');
-    } else if (computerScore === 2 && tieScore === 2) {
-        return console.log('Huge Disappointment! Computer has beaten you 0-2.');
-    } else if (playerScore === 3 && tieScore === 1) {
-        return console.log('MEGA JOB! You have defeated the computer 3-0.');
-    } else if (playerScore === 3 && computerScore === 1) {
-        return console.log('MEGA JOB! You have defeated the computer 3-1.');
-    } else if (computerScore === 3 && tieScore === 1) {
-        return console.log('Huge Disappointment! Computer has beaten you 0-3.');
-    } else if (computerScore === 3 && playerScore === 1) {
-        return console.log('Huge Disappointment! Computer has beaten you 1-3.');
-    }
+//     if (playerScore === 2 && tieScore === 2) {
+//         return console.log('MEGA JOB! You have defeated the computer 2-0.');
+//     } else if (computerScore === 2 && tieScore === 2) {
+//         return console.log('Huge Disappointment! Computer has beaten you 0-2.');
+//     } else if (playerScore === 3 && tieScore === 1) {
+//         return console.log('MEGA JOB! You have defeated the computer 3-0.');
+//     } else if (playerScore === 3 && computerScore === 1) {
+//         return console.log('MEGA JOB! You have defeated the computer 3-1.');
+//     } else if (computerScore === 3 && tieScore === 1) {
+//         return console.log('Huge Disappointment! Computer has beaten you 0-3.');
+//     } else if (computerScore === 3 && playerScore === 1) {
+//         return console.log('Huge Disappointment! Computer has beaten you 1-3.');
+//     }
 
-    playerSelection = getPlayerChoice();
-    computerSelection = getComputerChoice();
-    console.log(singleRound(playerSelection, computerSelection));
+//     playerSelection = getPlayerChoice();
+//     computerSelection = getComputerChoice();
+//     console.log(singleRound(playerSelection, computerSelection));
 
-    if (playerScore === 3 && computerScore === 2) {
-        return console.log('Amazing effort! You have defeated the computer 3-2.');
-    } else if (playerScore === 3 && computerScore === 1 && tieScore ===1) {
-        return console.log('Amazing effort! You have defeated the computer 3-1.');
-    } else if (playerScore === 2 && computerScore == 1 && tieScore === 2) {
-        return console.log('Amazing effort! You have defeated the computer 2-1.');
-    } else if (tieScore === 3 && playerScore === 2) {
-        return console.log('Amazing effort! You have defeated the computer 2-0.');
-    } else if (tieScore === 4 && playerScore === 1) {
-        return console.log('Amazing effort! You have defeated the computer 1-0.');     
-    } else if (computerScore === 3 && playerScore === 2) {
-        return console.log('That was close! Computer has beaten you 2-3.');
-    } else if (computerScore === 3 && playerScore === 1 && tieScore === 1) {
-        return console.log('That was close! Computer has beaten you 1-3.');
-    } else if (computerScore === 2 && playerScore === 1 && tieScore === 2) {
-        return console.log('That was close! Computer has beaten you 1-2.');
-    } else if (tieScore === 3 && computerScore === 2) {
-        return console.log('That was close! Computer has beaten you 0-2.');
-    } else if (tieScore === 4 && computerScore === 1) {
-        return console.log('That was close! Computer has beaten you 0-1.');
-    } else if (playerScore === computerScore) {
-        return console.log('BOOORING! Game tied 2-2.');
-    }
-}
-game();
+//     if (playerScore === 3 && computerScore === 2) {
+//         return console.log('Amazing effort! You have defeated the computer 3-2.');
+//     } else if (playerScore === 3 && computerScore === 1 && tieScore ===1) {
+//         return console.log('Amazing effort! You have defeated the computer 3-1.');
+//     } else if (playerScore === 2 && computerScore == 1 && tieScore === 2) {
+//         return console.log('Amazing effort! You have defeated the computer 2-1.');
+//     } else if (tieScore === 3 && playerScore === 2) {
+//         return console.log('Amazing effort! You have defeated the computer 2-0.');
+//     } else if (tieScore === 4 && playerScore === 1) {
+//         return console.log('Amazing effort! You have defeated the computer 1-0.');     
+//     } else if (computerScore === 3 && playerScore === 2) {
+//         return console.log('That was close! Computer has beaten you 2-3.');
+//     } else if (computerScore === 3 && playerScore === 1 && tieScore === 1) {
+//         return console.log('That was close! Computer has beaten you 1-3.');
+//     } else if (computerScore === 2 && playerScore === 1 && tieScore === 2) {
+//         return console.log('That was close! Computer has beaten you 1-2.');
+//     } else if (tieScore === 3 && computerScore === 2) {
+//         return console.log('That was close! Computer has beaten you 0-2.');
+//     } else if (tieScore === 4 && computerScore === 1) {
+//         return console.log('That was close! Computer has beaten you 0-1.');
+//     } else if (playerScore === computerScore) {
+//         return console.log('BOOORING! Game tied 2-2.');
+//     }
+// }
+// game();
 
 // live commentory: you are ahaed; sum of all scores and then using comparison to report the game 
 // invalid input
