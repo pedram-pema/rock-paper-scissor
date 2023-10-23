@@ -13,18 +13,21 @@ function getComputerChoice() {
 // WRITE A FUNCTION TO GET THE PLAYER'S CHOICE
 function getPlayerChoice() {
     let playerChoice = prompt('Select your weapon', '');    
-    return playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
+    playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
+
+    if (playerChoice !== 'Rock' || 'Paper' || 'Scissor') {
+        console.log('This weapon does not exist, you must choose between "Rock", "Paper" or "Scissor!"');
+        return (getPlayerChoice());
+    }
 }
 
 // WRITE A FUNCTION THAT PLAYS A SINGLE ROUND OF ROCK PAPER SCISSORS.
 let playerScore = 0;
 let computerScore = 0;
-let tieScore = 0;
 //variables above are declared to be used for counting score at the end of match and each round
 
 function singleRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        tieScore++;
         console.log('Round tied!');
         playerSelection = getPlayerChoice();
         computerSelection = getComputerChoice();
@@ -49,10 +52,6 @@ function singleRound(playerSelection, computerSelection) {
         return 'You Lost the round! Scissor beats Paper';
     }
 }
-
-// let playerSelection = getPlayerChoice();
-// let computerSelection = getComputerChoice();
-// console.log(singleRound(playerSelection, computerSelection));
 
 // WRITE A FUNCTION CALLED GAME() THAT KEEPS A SCORE AND REPORTS WINNER AT THE END
 function game() {
@@ -96,10 +95,10 @@ function game() {
     } else if (computerScore === 3) {
         return console.log('You have lost');
     }
-    
 }
 game();
 
 // live commentory: you are ahaed; sum of all scores and then using comparison to report the game 
 // invalid input
 // use template literals for reporting results scores didn't work. maybe defining a function would work!?
+// the difference between two versions of a tie game
