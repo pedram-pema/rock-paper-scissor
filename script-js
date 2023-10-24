@@ -71,9 +71,9 @@ function game() {
     console.log(singleRound(playerSelection, computerSelection));
     
     if (playerScore === 3) {
-        return console.log('You won the game!');
+        return console.log('MEGA JOB! You won the game.');
     } else if (computerScore === 3) {
-        return console.log('You have lost');
+        return console.log('CRUSHING DEFEAT! Computer have won.');
     }
 
     playerSelection = getPlayerChoice();
@@ -81,9 +81,9 @@ function game() {
     console.log(singleRound(playerSelection, computerSelection));
 
     if (playerScore === 3) {
-        return console.log('You won the game!');
+        return console.log('MEGA JOB! You won the game.');
     } else if (computerScore === 3) {
-        return console.log('You have lost');
+        return console.log('CRUSHING DEFEAT! Computer have won.');
     }
 
     playerSelection = getPlayerChoice();
@@ -91,14 +91,13 @@ function game() {
     console.log(singleRound(playerSelection, computerSelection));
 
     if (playerScore === 3) {
-        return console.log('You won the game!');
+        return console.log('MEGA JOB! You won the game.');
     } else if (computerScore === 3) {
-        return console.log('You have lost');
+        return console.log('CRUSHING DEFEAT! Computer have won.');
     }
 }
 game();
 
 // live commentory: you are ahaed; sum of all scores and then using comparison to report the game 
-// invalid input
 // use template literals for reporting results scores didn't work. maybe defining a function would work!?
 // the difference between two versions of a tie game
