@@ -13,12 +13,7 @@ function getComputerChoice() {
 // WRITE A FUNCTION TO GET THE PLAYER'S CHOICE
 function getPlayerChoice() {
     let playerChoice = prompt('Select your weapon', '');    
-    playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
-
-    if (playerChoice !== 'Rock' || 'Paper' || 'Scissor') {
-        console.log('This weapon does not exist, you must choose between "Rock", "Paper" or "Scissor!"');
-        return (getPlayerChoice());
-    }
+    return playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
 }
 
 // WRITE A FUNCTION THAT PLAYS A SINGLE ROUND OF ROCK PAPER SCISSORS.
