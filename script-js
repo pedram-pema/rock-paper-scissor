@@ -14,7 +14,17 @@ function getComputerChoice() {
 function getPlayerChoice() {
     let playerChoice = prompt('Select your weapon', '');    
     return playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
+
 }
+
+function getValidInput() {
+    if (getPlayerChoice() !== 'Rock' || 'Paper' || 'Scissor') {
+        console.log('get valid input'); 
+        return getPlayerChoice();
+    }
+}
+getValidInput();
+
 
 // WRITE A FUNCTION THAT PLAYS A SINGLE ROUND OF ROCK PAPER SCISSORS.
 let playerScore = 0;
