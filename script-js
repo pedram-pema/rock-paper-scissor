@@ -12,18 +12,22 @@ function getComputerChoice() {
 
 // WRITE A FUNCTION TO GET THE PLAYER'S CHOICE
 function getPlayerChoice() {
-    let playerChoice = prompt('Select your weapon', '');    
-    return playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
-
-}
-
-function getValidInput() {
-    if (getPlayerChoice() !== 'Rock' || 'Paper' || 'Scissor') {
-        console.log('get valid input'); 
+    let playerChoice = prompt('Select your weapon', '');
+    playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
+    if (playerChoice !== 'Rock' && 'Paper' && 'Scissor') {
+        console.log("Your weapon of chocie doesn't exist. You must choose 'Rock', 'Paper' or 'Scissor'."); 
         return getPlayerChoice();
+    } else {
+        return playerChoice;
     }
 }
-getValidInput();
+
+/* function getValidInput() {
+    if (playerChoice !== 'Rock' || 'Paper' || 'Scissor') {
+        console.log("Your weapon of chocie doesn't exist. You must choose 'Rock', 'Paper' or 'Scissor'."); 
+        return getPlayerChoice();
+    }
+} */
 
 
 // WRITE A FUNCTION THAT PLAYS A SINGLE ROUND OF ROCK PAPER SCISSORS.
