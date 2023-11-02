@@ -22,14 +22,6 @@ function getPlayerChoice() {
     }
 }
 
-/* function getValidInput() {
-    if (playerChoice !== 'Rock' || 'Paper' || 'Scissor') {
-        console.log("Your weapon of chocie doesn't exist. You must choose 'Rock', 'Paper' or 'Scissor'."); 
-        return getPlayerChoice();
-    }
-} */
-
-
 // WRITE A FUNCTION THAT PLAYS A SINGLE ROUND OF ROCK PAPER SCISSORS.
 let playerScore = 0;
 let computerScore = 0;
@@ -70,14 +62,17 @@ function game() {
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
     console.log(singleRound(playerSelection, computerSelection));
+    console.log(showCommentary());
 
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
     console.log(singleRound(playerSelection, computerSelection));
+    console.log(showCommentary());
 
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
     console.log(singleRound(playerSelection, computerSelection));
+    console.log(showCommentary());
     
     if (playerScore === 3) {
         return console.log('MEGA JOB! You won the game.');
@@ -88,6 +83,7 @@ function game() {
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
     console.log(singleRound(playerSelection, computerSelection));
+    console.log(showCommentary());
 
     if (playerScore === 3) {
         return console.log('MEGA JOB! You won the game.');
@@ -98,6 +94,7 @@ function game() {
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
     console.log(singleRound(playerSelection, computerSelection));
+    console.log(showCommentary());
 
     if (playerScore === 3) {
         return console.log('MEGA JOB! You won the game.');
@@ -107,6 +104,15 @@ function game() {
 }
 game();
 
+function showCommentary() {
+    if (playerScore > computerScore && playerScore !== 3 && computerScore !== 3) {
+        return "You are ahead! Keep it up.";
+    } else if (computerScore > playerScore && playerScore !== 3 && computerScore !== 3) {
+        return "You are loosing! Do something.";
+    } else if (playerScore === computerScore && playerScore !== 3 && computerScore !== 3) {
+        return "Score is tied! Hurry up.";
+    }
+}
+
 // live commentory: you are ahaed; sum of all scores and then using comparison to report the game 
 // use template literals for reporting results scores didn't work. maybe defining a function would work!?
-// the difference between two versions of a tie game
