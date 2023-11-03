@@ -111,6 +111,8 @@ function showCommentary() {
         return "You are loosing! Do something.";
     } else if (playerScore === computerScore && playerScore !== 3 && computerScore !== 3) {
         return "Score is tied! Hurry up.";
+    } else if (playerScore === 3 || computerScore === 3) {
+        return ''
     }
 }
 
