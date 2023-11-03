@@ -112,9 +112,10 @@ function showCommentary() {
     } else if (playerScore === computerScore && playerScore !== 3 && computerScore !== 3) {
         return "Score is tied! Hurry up.";
     } else if (playerScore === 3 || computerScore === 3) {
-        return ''
+        return 'Final result is:';
     }
 }
 
 // live commentory: you are ahaed; sum of all scores and then using comparison to report the game 
+// add score to commentary
 // use template literals for reporting results scores didn't work. maybe defining a function would work!?
