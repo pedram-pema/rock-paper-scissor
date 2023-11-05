@@ -1,4 +1,3 @@
-// WRITE A FUNCTION TO GET THE COMPUTER'S CHOICE
 function getComputerChoice() {
     const randomChoice = Math.floor(Math.random() * 3);
     if (randomChoice === 0) {
@@ -10,7 +9,6 @@ function getComputerChoice() {
     }
 }
 
-// WRITE A FUNCTION TO GET THE PLAYER'S CHOICE
 function getPlayerChoice() {
     let playerChoice = prompt('Select your weapon', '');
     playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
@@ -22,7 +20,6 @@ function getPlayerChoice() {
     }
 }
 
-// WRITE A FUNCTION THAT PLAYS A SINGLE ROUND OF ROCK PAPER SCISSORS.
 let playerScore = 0;
 let computerScore = 0;
 //variables above are declared to be used for counting score at the end of match and each round
