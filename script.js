@@ -22,7 +22,9 @@ function getPlayerChoice() {
 
 let playerScore = 0;
 let computerScore = 0;
-//variables above are declared to be used for counting score at the end of match and each round
+/* variables above are declared to be used for counting score at the end of match and each round.
+Each win is counted as one point for the winner.
+ */
 
 function singleRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
@@ -51,7 +53,6 @@ function singleRound(playerSelection, computerSelection) {
     }
 }
 
-// WRITE A FUNCTION CALLED GAME() THAT KEEPS A SCORE AND REPORTS WINNER AT THE END
 function game() {
     let playerSelection;
     let computerSelection;
