@@ -26,12 +26,12 @@ let computerScore = 0;
 Each win is counted as one point for the winner.
  */
 
-function singleRound(playerSelection, computerSelection) {
+function playSingleRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         console.log('Round tied!');
         playerSelection = getPlayerChoice();
         computerSelection = getComputerChoice();
-        return (singleRound(playerSelection, computerSelection));
+        return (playSingleRound(playerSelection, computerSelection));
     } else if (playerSelection === 'Rock'  && computerSelection === 'Scissor') {
         playerScore++;
         return 'You Won the round! Rock beats Scissor';        
@@ -59,17 +59,17 @@ function game() {
 
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
-    console.log(singleRound(playerSelection, computerSelection));
+    console.log(playSingleRound(playerSelection, computerSelection));
     console.log(showCommentary());
 
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
-    console.log(singleRound(playerSelection, computerSelection));
+    console.log(playSingleRound(playerSelection, computerSelection));
     console.log(showCommentary());
 
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
-    console.log(singleRound(playerSelection, computerSelection));
+    console.log(playSingleRound(playerSelection, computerSelection));
     console.log(showCommentary());
     
     if (playerScore === 3) {
@@ -80,7 +80,7 @@ function game() {
 
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
-    console.log(singleRound(playerSelection, computerSelection));
+    console.log(playSingleRound(playerSelection, computerSelection));
     console.log(showCommentary());
 
     if (playerScore === 3) {
@@ -91,7 +91,7 @@ function game() {
 
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
-    console.log(singleRound(playerSelection, computerSelection));
+    console.log(playSingleRound(playerSelection, computerSelection));
     console.log(showCommentary());
 
     if (playerScore === 3) {
