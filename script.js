@@ -18,7 +18,8 @@ function getPlayerChoice() {
     } else {
         return playerChoice;
     }
-}
+} 
+// WE COULD USE A MODIFY FUNCTION FOR PLAYER CHOICE TO GET BETTER READABILITY
 
 let playerScore = 0;
 let computerScore = 0;
