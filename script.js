@@ -105,16 +105,18 @@ game();
 
 function showCommentary() {
     if (playerScore > computerScore && playerScore !== 3 && computerScore !== 3) {
-        return "You are ahead! Keep it up.";
+        return `You are ahead ${playerScore}-${computerScore}! Keep it up.`;
     } else if (computerScore > playerScore && playerScore !== 3 && computerScore !== 3) {
-        return "You are loosing! Do something.";
+        return `You are loosing ${playerScore}-${computerScore}! Do something.`;
     } else if (playerScore === computerScore && playerScore !== 3 && computerScore !== 3) {
-        return "Score is tied! Hurry up.";
+        return `Score is tied ${playerScore}-${computerScore}! Hurry up.`;
     } else if (playerScore === 3 || computerScore === 3) {
-        return 'Final result is:';
+        return `Final result is: ${playerScore}-${computerScore}!`;
     }
 }
 
 // live commentory: you are ahaed; sum of all scores and then using comparison to report the game 
 // add score to commentary
 // use template literals for reporting results scores didn't work. maybe defining a function would work!?
+// when round tied, game must inform that you have to play again
+// game must react differently to each score
