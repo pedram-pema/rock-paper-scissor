@@ -12,14 +12,13 @@ function getComputerChoice() {
 function getPlayerChoice() {
     let playerChoice = prompt('Select your weapon', '');
     playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
-    if (playerChoice !== 'Rock' && 'Paper' && 'Scissor') {
+    if (playerChoice === 'Rock' || playerChoice === 'Paper' || playerChoice === 'Scissor') {
+        return playerChoice;
+    } else if (playerChoice !== 'Rock' || playerChoice !== 'Paper' || playerChoice !== 'Scissor') {
         console.log("Your weapon of chocie doesn't exist. You must choose 'Rock', 'Paper' or 'Scissor'."); 
         return getPlayerChoice();
-    } else {
-        return playerChoice;
     }
 } 
-// WE COULD USE A MODIFY FUNCTION FOR PLAYER CHOICE TO GET BETTER READABILITY
 
 let playerScore = 0;
 let computerScore = 0;
@@ -119,4 +118,4 @@ function showCommentary() {
 // add score to commentary
 // use template literals for reporting results scores didn't work. maybe defining a function would work!?
 // when round tied, game must inform that you have to play again
-// game must react differently to each score
+// game must react differently to each scorew
