@@ -28,7 +28,7 @@ Each win is counted as one point for the winner.
 
 function playSingleRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        console.log('Round tied!');
+        console.log('Round tied! You have to choose a weapon again.');
         playerSelection = getPlayerChoice();
         computerSelection = getComputerChoice();
         return (playSingleRound(playerSelection, computerSelection));
@@ -114,8 +114,5 @@ function showCommentary() {
     }
 }
 
-// live commentory: you are ahaed; sum of all scores and then using comparison to report the game 
-// add score to commentary
-// use template literals for reporting results scores didn't work. maybe defining a function would work!?
 // when round tied, game must inform that you have to play again
 // game must react differently to each scorew
