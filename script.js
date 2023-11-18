@@ -11,6 +11,10 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
     let playerChoice = prompt('Select your weapon', '');
+        if (playerChoice === '') {
+            console.log("You have not selected anything! choose a weapon first.");
+            return getPlayerChoice();
+        }
     playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
     if (playerChoice === 'Rock' || playerChoice === 'Paper' || playerChoice === 'Scissor') {
         return playerChoice;
