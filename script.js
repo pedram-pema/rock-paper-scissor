@@ -15,10 +15,15 @@ function getPlayerChoice() {
             console.log("You have not selected anything! choose a weapon first.");
             return getPlayerChoice();
         }
-    playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
-    if (playerChoice === 'Rock' || playerChoice === 'Paper' || playerChoice === 'Scissor') {
+    playerChoice = playerChoice.charAt(0).toUpperCase() + 
+    playerChoice.slice(1).toLowerCase();
+    if (playerChoice === 'Rock' 
+        || playerChoice === 'Paper' 
+        || playerChoice === 'Scissor') {
         return playerChoice;
-    } else if (playerChoice !== 'Rock' || playerChoice !== 'Paper' || playerChoice !== 'Scissor') {
+    } else if (playerChoice !== 'Rock' 
+                || playerChoice !== 'Paper' 
+                    || playerChoice !== 'Scissor') {
         console.log("Your weapon of chocie doesn't exist. You must choose 'Rock', 'Paper' or 'Scissor'."); 
         return getPlayerChoice();
     }
@@ -36,22 +41,28 @@ function playSingleRound(playerSelection, computerSelection) {
         playerSelection = getPlayerChoice();
         computerSelection = getComputerChoice();
         return (playSingleRound(playerSelection, computerSelection));
-    } else if (playerSelection === 'Rock'  && computerSelection === 'Scissor') {
+    } else if (playerSelection === 'Rock' 
+                && computerSelection === 'Scissor') {
         playerScore++;
         return 'You Won the round! Rock beats Scissor';        
-    } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
+    } else if (playerSelection === 'Paper' 
+                && computerSelection === 'Rock') {
         playerScore++;
         return 'You Won the round! Paper beats Rock';
-    } else if (playerSelection === 'Scissor' && computerSelection === 'Paper') {
+    } else if (playerSelection === 'Scissor' 
+                && computerSelection === 'Paper') {
         playerScore++;
         return 'You Won the round! Scissor beats Paper';
-    } else if (playerSelection === 'Scissor'  && computerSelection === 'Rock') {
+    } else if (playerSelection === 'Scissor' 
+                && computerSelection === 'Rock') {
         computerScore++;
         return 'You Lost the round! Rock beats Scissor';        
-    } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
+    } else if (playerSelection === 'Rock' 
+                && computerSelection === 'Paper') {
         computerScore++;
         return 'You Lost the round! Paper beats Rock';
-    } else if (playerSelection === 'Paper' && computerSelection === 'Scissor') {
+    } else if (playerSelection === 'Paper' 
+                && computerSelection === 'Scissor') {
         computerScore++;
         return 'You Lost the round! Scissor beats Paper';
     }
@@ -107,16 +118,23 @@ function game() {
 game();
 
 function showCommentary() {
-    if (playerScore > computerScore && playerScore !== 3 && computerScore !== 3) {
+    if (playerScore > computerScore 
+        && playerScore !== 3 
+        && computerScore !== 3) {
         return `You are ahead ${playerScore}-${computerScore}! Keep it up.`;
-    } else if (computerScore > playerScore && playerScore !== 3 && computerScore !== 3) {
+    } else if (computerScore > playerScore 
+                && playerScore !== 3 
+                && computerScore !== 3) {
         return `You are loosing ${playerScore}-${computerScore}! Do something.`;
-    } else if (playerScore === computerScore && playerScore !== 3 && computerScore !== 3) {
+    } else if (playerScore === computerScore 
+                && playerScore !== 3 
+                && computerScore !== 3) {
         return `Score is tied ${playerScore}-${computerScore}! Hurry up.`;
-    } else if (playerScore === 3 || computerScore === 3) {
+    } else if (playerScore === 3 
+                || computerScore === 3) {
         return `Final result is: ${playerScore}-${computerScore}!`;
     }
 }
 
-// when round tied, game must inform that you have to play again
-// game must react differently to each scorew
+// game must react differently to each score
+// find a state for when game is cancelled
