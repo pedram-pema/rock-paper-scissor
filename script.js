@@ -10,9 +10,9 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice() {
-    let playerChoice = prompt('Select your weapon', '');
+    let playerChoice = prompt('Choose your weapon between Rock, Paper or Scissor!', '');
         if (playerChoice === '') {
-            console.log("You have not selected anything! choose a weapon first.");
+            console.log("You haven't selected anything! \nChoose a weapon first.");
             return getPlayerChoice();
         }
     playerChoice = playerChoice.charAt(0).toUpperCase() + 
@@ -24,7 +24,7 @@ function getPlayerChoice() {
     } else if (playerChoice !== 'Rock' 
                 || playerChoice !== 'Paper' 
                     || playerChoice !== 'Scissor') {
-        console.log("Your weapon of chocie doesn't exist. You must choose 'Rock', 'Paper' or 'Scissor'."); 
+        console.log("Your weapon of chocie doesn't exist. \nYou must choose between 'Rock', 'Paper' or 'Scissor'."); 
         return getPlayerChoice();
     }
 } 
@@ -138,3 +138,4 @@ function showCommentary() {
 
 // game must react differently to each score
 // find a state for when game is cancelled
+// use debugger instead of console.log to see values
