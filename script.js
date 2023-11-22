@@ -11,10 +11,12 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
     let playerChoice = prompt('Choose your weapon between Rock, Paper or Scissor!', '');
-        if (playerChoice === '') {
-            console.log("You haven't selected anything! \nChoose a weapon first.");
-            return getPlayerChoice();
-        }
+    if (playerChoice == null) {
+        return console.log('cancel')
+    } else if (playerChoice === '') {
+        console.log("You haven't selected anything! \nChoose a weapon first.");
+        return getPlayerChoice();
+    }
     playerChoice = playerChoice.charAt(0).toUpperCase() + 
     playerChoice.slice(1).toLowerCase();
     if (playerChoice === 'Rock' 
@@ -27,7 +29,7 @@ function getPlayerChoice() {
         console.log("Your weapon of chocie doesn't exist. \nYou must choose between 'Rock', 'Paper' or 'Scissor'."); 
         return getPlayerChoice();
     }
-} 
+}
 
 let playerScore = 0;
 let computerScore = 0;
@@ -72,7 +74,7 @@ function game() {
     let playerSelection;
     let computerSelection;
 
-    playerSelection = getPlayerChoice();
+    playerSelection = getPlayerChoice();   
     computerSelection = getComputerChoice();
     console.log(playSingleRound(playerSelection, computerSelection));
     console.log(showCommentary());
@@ -139,3 +141,4 @@ function showCommentary() {
 // game must react differently to each score
 // find a state for when game is cancelled
 // use debugger instead of console.log to see values
+// declare a null function
