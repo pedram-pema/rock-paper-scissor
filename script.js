@@ -12,7 +12,6 @@ function getComputerChoice() {
 function getPlayerChoice() {
     let playerChoice = prompt('Choose your weapon between Rock, Paper or Scissor!', '');
         if (playerChoice == null) {
-            console.log('cancel');
             return;
         } else if (playerChoice === '') {
         console.log("You haven't selected anything! \nChoose a weapon first.");
@@ -84,14 +83,6 @@ function game() {
     console.log(playSingleRound(playerSelection, computerSelection));
     console.log(showCommentary());
 
-    playerSelection = getPlayerChoice();
-    if (playerSelection == undefined) {
-        console.log('canceled all');
-        return;
-    }
-    computerSelection = getComputerChoice();
-    console.log(playSingleRound(playerSelection, computerSelection));
-    console.log(showCommentary());
 
     playerSelection = getPlayerChoice();
     if (playerSelection == undefined) {
@@ -101,13 +92,23 @@ function game() {
     computerSelection = getComputerChoice();
     console.log(playSingleRound(playerSelection, computerSelection));
     console.log(showCommentary());
-    
+
+
+    playerSelection = getPlayerChoice();
+    if (playerSelection == undefined) {
+        console.log('canceled all');
+        return;
+    }
+    computerSelection = getComputerChoice();
+    console.log(playSingleRound(playerSelection, computerSelection));
+    console.log(showCommentary());
     if (playerScore === 3) {
         return console.log('MEGA JOB! You won the game.');
     } else if (computerScore === 3) {
         return console.log('CRUSHING DEFEAT! Computer have won.');
     }
 
+
     playerSelection = getPlayerChoice();
     if (playerSelection == undefined) {
         console.log('canceled all');
@@ -116,22 +117,21 @@ function game() {
     computerSelection = getComputerChoice();
     console.log(playSingleRound(playerSelection, computerSelection));
     console.log(showCommentary());
-
     if (playerScore === 3) {
         return console.log('MEGA JOB! You won the game.');
     } else if (computerScore === 3) {
         return console.log('CRUSHING DEFEAT! Computer have won.');
     }
 
+
     playerSelection = getPlayerChoice();
     if (playerSelection == undefined) {
         console.log('canceled all');
         return;
-    }
+    }   
     computerSelection = getComputerChoice();
     console.log(playSingleRound(playerSelection, computerSelection));
     console.log(showCommentary());
-
     if (playerScore === 3) {
         return console.log('MEGA JOB! You won the game.');
     } else if (computerScore === 3) {
