@@ -11,9 +11,10 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
     let playerChoice = prompt('Choose your weapon between Rock, Paper or Scissor!', '');
-    if (playerChoice == null) {
-        return console.log('cancel')
-    } else if (playerChoice === '') {
+        if (playerChoice == null) {
+            console.log('cancel');
+            return;
+        } else if (playerChoice === '') {
         console.log("You haven't selected anything! \nChoose a weapon first.");
         return getPlayerChoice();
     }
@@ -74,17 +75,29 @@ function game() {
     let playerSelection;
     let computerSelection;
 
-    playerSelection = getPlayerChoice();   
+    playerSelection = getPlayerChoice();
+    if (playerSelection == undefined) {
+        console.log('canceled all');
+        return;
+    }
     computerSelection = getComputerChoice();
     console.log(playSingleRound(playerSelection, computerSelection));
     console.log(showCommentary());
 
     playerSelection = getPlayerChoice();
+    if (playerSelection == undefined) {
+        console.log('canceled all');
+        return;
+    }
     computerSelection = getComputerChoice();
     console.log(playSingleRound(playerSelection, computerSelection));
     console.log(showCommentary());
 
     playerSelection = getPlayerChoice();
+    if (playerSelection == undefined) {
+        console.log('canceled all');
+        return;
+    }
     computerSelection = getComputerChoice();
     console.log(playSingleRound(playerSelection, computerSelection));
     console.log(showCommentary());
@@ -96,6 +109,10 @@ function game() {
     }
 
     playerSelection = getPlayerChoice();
+    if (playerSelection == undefined) {
+        console.log('canceled all');
+        return;
+    }
     computerSelection = getComputerChoice();
     console.log(playSingleRound(playerSelection, computerSelection));
     console.log(showCommentary());
@@ -107,6 +124,10 @@ function game() {
     }
 
     playerSelection = getPlayerChoice();
+    if (playerSelection == undefined) {
+        console.log('canceled all');
+        return;
+    }
     computerSelection = getComputerChoice();
     console.log(playSingleRound(playerSelection, computerSelection));
     console.log(showCommentary());
