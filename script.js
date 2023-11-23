@@ -70,6 +70,25 @@ function playSingleRound(playerSelection, computerSelection) {
     }
 }
 
+function showCommentary() {
+    if (playerScore > computerScore 
+        && playerScore !== 3 
+        && computerScore !== 3) {
+        return `You are ahead ${playerScore}-${computerScore}! Keep it up.`;
+    } else if (computerScore > playerScore 
+                && playerScore !== 3 
+                && computerScore !== 3) {
+        return `You are loosing ${playerScore}-${computerScore}! Do something.`;
+    } else if (playerScore === computerScore 
+                && playerScore !== 3 
+                && computerScore !== 3) {
+        return `Score is tied ${playerScore}-${computerScore}! Hurry up.`;
+    } else if (playerScore === 3 
+                || computerScore === 3) {
+        return `Final result is: ${playerScore}-${computerScore}!`;
+    }
+}
+
 function game() {
     let playerSelection;
     let computerSelection;
@@ -155,27 +174,4 @@ function game() {
 }
 game();
 
-function showCommentary() {
-    if (playerScore > computerScore 
-        && playerScore !== 3 
-        && computerScore !== 3) {
-        return `You are ahead ${playerScore}-${computerScore}! Keep it up.`;
-    } else if (computerScore > playerScore 
-                && playerScore !== 3 
-                && computerScore !== 3) {
-        return `You are loosing ${playerScore}-${computerScore}! Do something.`;
-    } else if (playerScore === computerScore 
-                && playerScore !== 3 
-                && computerScore !== 3) {
-        return `Score is tied ${playerScore}-${computerScore}! Hurry up.`;
-    } else if (playerScore === 3 
-                || computerScore === 3) {
-        return `Final result is: ${playerScore}-${computerScore}!`;
-    }
-}
-
 // game must react differently to each score
-// find a state for when game is cancelled
-// use debugger instead of console.log to see values
-// declare a null function
-// use ternary or switch
