@@ -76,8 +76,11 @@ function game() {
 
     playerSelection = getPlayerChoice();
     if (playerSelection == undefined) {
-        console.log('canceled all');
-        return;
+        let cancelGame = confirm('Do you want to cancel the game?');
+        if (cancelGame) {
+            console.log('You have canceled the game.')
+            return;
+        }
     }
     computerSelection = getComputerChoice();
     console.log(playSingleRound(playerSelection, computerSelection));
@@ -86,8 +89,11 @@ function game() {
 
     playerSelection = getPlayerChoice();
     if (playerSelection == undefined) {
-        console.log('canceled all');
-        return;
+        let cancelGame = confirm('Do you want to cancel the game?');
+        if (cancelGame) {
+            console.log('You have canceled the game.')
+            return;
+        }
     }
     computerSelection = getComputerChoice();
     console.log(playSingleRound(playerSelection, computerSelection));
@@ -96,23 +102,11 @@ function game() {
 
     playerSelection = getPlayerChoice();
     if (playerSelection == undefined) {
-        console.log('canceled all');
-        return;
-    }
-    computerSelection = getComputerChoice();
-    console.log(playSingleRound(playerSelection, computerSelection));
-    console.log(showCommentary());
-    if (playerScore === 3) {
-        return console.log('MEGA JOB! You won the game.');
-    } else if (computerScore === 3) {
-        return console.log('CRUSHING DEFEAT! Computer have won.');
-    }
-
-
-    playerSelection = getPlayerChoice();
-    if (playerSelection == undefined) {
-        console.log('canceled all');
-        return;
+        let cancelGame = confirm('Do you want to cancel the game?');
+        if (cancelGame) {
+            console.log('You have canceled the game.')
+            return;
+        }
     }
     computerSelection = getComputerChoice();
     console.log(playSingleRound(playerSelection, computerSelection));
@@ -126,9 +120,30 @@ function game() {
 
     playerSelection = getPlayerChoice();
     if (playerSelection == undefined) {
-        console.log('canceled all');
-        return;
-    }   
+        let cancelGame = confirm('Do you want to cancel the game?');
+        if (cancelGame) {
+            console.log('You have canceled the game.')
+            return;
+        }
+    }
+    computerSelection = getComputerChoice();
+    console.log(playSingleRound(playerSelection, computerSelection));
+    console.log(showCommentary());
+    if (playerScore === 3) {
+        return console.log('MEGA JOB! You won the game.');
+    } else if (computerScore === 3) {
+        return console.log('CRUSHING DEFEAT! Computer have won.');
+    }
+
+
+    playerSelection = getPlayerChoice();
+    if (playerSelection == undefined) {
+        let cancelGame = confirm('Do you want to cancel the game?');
+        if (cancelGame) {
+            console.log('You have canceled the game.')
+            return;
+        }
+    }
     computerSelection = getComputerChoice();
     console.log(playSingleRound(playerSelection, computerSelection));
     console.log(showCommentary());
@@ -163,3 +178,4 @@ function showCommentary() {
 // find a state for when game is cancelled
 // use debugger instead of console.log to see values
 // declare a null function
+// use ternary or switch
