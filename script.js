@@ -100,6 +100,25 @@ function game() {
         if (cancelGameRequest) {
             console.log('You have canceled the game.')
             return;
+        } else {
+            console.log('OK! Continue the game.');
+            playerSelection = getPlayerChoice();
+        }
+    } 
+    computerSelection = getComputerChoice();
+    console.log(playSingleRound(playerSelection, computerSelection));
+    console.log(showCommentary());
+
+
+    playerSelection = getPlayerChoice();
+    if (playerSelection == undefined) {
+        let cancelGameRequest = confirm('Do you want to cancel the game?');
+        if (cancelGameRequest) {
+            console.log('You have canceled the game.')
+            return;
+        } else {
+            console.log('OK! Continue the game.');
+            playerSelection = getPlayerChoice();
         }
     }
     computerSelection = getComputerChoice();
@@ -113,37 +132,9 @@ function game() {
         if (cancelGameRequest) {
             console.log('You have canceled the game.')
             return;
-        }
-    }
-    computerSelection = getComputerChoice();
-    console.log(playSingleRound(playerSelection, computerSelection));
-    console.log(showCommentary());
-
-
-    playerSelection = getPlayerChoice();
-    if (playerSelection == undefined) {
-        let cancelGameRequest = confirm('Do you want to cancel the game?');
-        if (cancelGameRequest) {
-            console.log('You have canceled the game.')
-            return;
-        }
-    }
-    computerSelection = getComputerChoice();
-    console.log(playSingleRound(playerSelection, computerSelection));
-    console.log(showCommentary());
-    if (playerScore === 3) {
-        return console.log('MEGA JOB! You won the game.');
-    } else if (computerScore === 3) {
-        return console.log('CRUSHING DEFEAT! Computer have won.');
-    }
-
-
-    playerSelection = getPlayerChoice();
-    if (playerSelection == undefined) {
-        let cancelGameRequest = confirm('Do you want to cancel the game?');
-        if (cancelGameRequest) {
-            console.log('You have canceled the game.')
-            return;
+        } else {
+            console.log('OK! Continue the game.');
+            playerSelection = getPlayerChoice();
         }
     }
     computerSelection = getComputerChoice();
@@ -162,6 +153,30 @@ function game() {
         if (cancelGameRequest) {
             console.log('You have canceled the game.')
             return;
+        } else {
+            console.log('OK! Continue the game.');
+            playerSelection = getPlayerChoice();
+        }
+    }
+    computerSelection = getComputerChoice();
+    console.log(playSingleRound(playerSelection, computerSelection));
+    console.log(showCommentary());
+    if (playerScore === 3) {
+        return console.log('MEGA JOB! You won the game.');
+    } else if (computerScore === 3) {
+        return console.log('CRUSHING DEFEAT! Computer have won.');
+    }
+
+
+    playerSelection = getPlayerChoice();
+    if (playerSelection == undefined) {
+        let cancelGameRequest = confirm('Do you want to cancel the game?');
+        if (cancelGameRequest) {
+            console.log('You have canceled the game.')
+            return;
+        } else {
+            console.log('OK! Continue the game.');
+            playerSelection = getPlayerChoice();
         }
     }
     computerSelection = getComputerChoice();
