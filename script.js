@@ -47,7 +47,7 @@ function playSingleRound(playerSelection, computerSelection) {
     } else if (playerSelection === 'Rock' 
                 && computerSelection === 'Scissor') {
         playerScore++;
-        return 'You Won the round! Rock beats Scissor';        
+        return 'You Won the round! Rock beats Scissor';        // change return to console.log so in game don't need to console.log
     } else if (playerSelection === 'Paper' 
                 && computerSelection === 'Rock') {
         playerScore++;
@@ -68,6 +68,8 @@ function playSingleRound(playerSelection, computerSelection) {
                 && computerSelection === 'Scissor') {
         computerScore++;
         return 'You Lost the round! Scissor beats Paper';
+    } else if (playerSelection == undefined) {
+        return 'No second chance this time';
     }
 }
 
@@ -101,12 +103,15 @@ function game() {
             console.log('You have canceled the game.')
             return;
         } else {
-            console.log('OK! Continue the game.');
+            console.log('OK! Continue the game.');  
             playerSelection = getPlayerChoice();
         }
     } 
     computerSelection = getComputerChoice();
-    console.log(playSingleRound(playerSelection, computerSelection));
+    console.log(playSingleRound(playerSelection, computerSelection)); //Can do sth to palyerSelection
+    if (playerSelection == undefined) {
+        return;
+    }
     console.log(showCommentary());
 
 
@@ -177,7 +182,7 @@ function game() {
         } else {
             console.log('OK! Continue the game.');
             playerSelection = getPlayerChoice();
-        }
+        }   
     }
     computerSelection = getComputerChoice();
     console.log(playSingleRound(playerSelection, computerSelection));
@@ -190,4 +195,9 @@ function game() {
 }
 game();
 
+// function replay() {
+//     game();
+// }
+
 // game must react differently to each score
+// if playerScore++ then show round result
