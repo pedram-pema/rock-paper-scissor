@@ -26,7 +26,7 @@ function getPlayerChoice() {
         return playerChoice;
     } else if (playerChoice !== 'Rock' 
                 || playerChoice !== 'Paper' 
-                    || playerChoice !== 'Scissor') {
+                || playerChoice !== 'Scissor') {
         console.log("Your weapon of chocie doesn't exist. \nYou must choose between 'Rock', 'Paper' or 'Scissor'."); 
         return getPlayerChoice();
     }
@@ -47,7 +47,7 @@ function playSingleRound(playerSelection, computerSelection) {
     } else if (playerSelection === 'Rock' 
                 && computerSelection === 'Scissor') {
         playerScore++;
-        return 'You Won the round! Rock beats Scissor';        // change return to console.log so in game don't need to console.log
+        return 'You Won the round! Rock beats Scissor';
     } else if (playerSelection === 'Paper' 
                 && computerSelection === 'Rock') {
         playerScore++;
@@ -108,7 +108,7 @@ function game() {
         }
     } 
     computerSelection = getComputerChoice();
-    console.log(playSingleRound(playerSelection, computerSelection)); //Can do sth to palyerSelection
+    console.log(playSingleRound(playerSelection, computerSelection));
     if (playerSelection == undefined) {
         return;
     }
@@ -212,4 +212,3 @@ game();
 // }
 
 // game must react differently to each score
-// if playerScore++ then show round result
