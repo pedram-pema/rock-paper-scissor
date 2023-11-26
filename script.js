@@ -128,6 +128,9 @@ function game() {
     }
     computerSelection = getComputerChoice();
     console.log(playSingleRound(playerSelection, computerSelection));
+    if (playerSelection == undefined) {
+        return;
+    }
     console.log(showCommentary());
 
 
@@ -144,6 +147,9 @@ function game() {
     }
     computerSelection = getComputerChoice();
     console.log(playSingleRound(playerSelection, computerSelection));
+    if (playerSelection == undefined) {
+        return;
+    }
     console.log(showCommentary());
     if (playerScore === 3) {
         return console.log('MEGA JOB! You won the game.');
@@ -165,6 +171,9 @@ function game() {
     }
     computerSelection = getComputerChoice();
     console.log(playSingleRound(playerSelection, computerSelection));
+    if (playerSelection == undefined) {
+        return;
+    }
     console.log(showCommentary());
     if (playerScore === 3) {
         return console.log('MEGA JOB! You won the game.');
@@ -186,6 +195,9 @@ function game() {
     }
     computerSelection = getComputerChoice();
     console.log(playSingleRound(playerSelection, computerSelection));
+    if (playerSelection == undefined) {
+        return;
+    }
     console.log(showCommentary());
     if (playerScore === 3) {
         return console.log('MEGA JOB! You won the game.');
