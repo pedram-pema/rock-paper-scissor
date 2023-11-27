@@ -11,12 +11,12 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
     let playerChoice = prompt('Choose your weapon between Rock, Paper or Scissor!', '');
-        if (playerChoice == null) {
+    switch(playerChoice) {
+        case null:
             return;
-        } else if (playerChoice === '') {
-        console.log("You haven't selected anything! \nChoose a weapon first.");
-        return getPlayerChoice();
-        //  COULD USE SWITCH HERE MAYBE??????
+        case '':
+            console.log("You haven't selected anything! \nChoose a weapon first.");
+            return getPlayerChoice();
     }
     playerChoice = playerChoice.charAt(0).toUpperCase() + 
     playerChoice.slice(1).toLowerCase();
