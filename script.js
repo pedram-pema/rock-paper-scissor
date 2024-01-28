@@ -5,12 +5,12 @@ function getComputerChoice() {
     } else if (randomChoice === 1) {
         return 'Paper';
     } else {
-        return 'Scissor';
+        return 'Scissors';
     }
 }
 
 function getPlayerChoice() {
-    let playerChoice = prompt('Choose your weapon between Rock, Paper or Scissor!', '');
+    let playerChoice = prompt('Choose your weapon between Rock, Paper or Scissors!', '');
     switch(playerChoice) {
         case null:
             return;
@@ -18,16 +18,15 @@ function getPlayerChoice() {
             console.log("You haven't selected anything! \nChoose a weapon first.");
             return getPlayerChoice();
     }
-    playerChoice = playerChoice.charAt(0).toUpperCase() + 
-    playerChoice.slice(1).toLowerCase();
+    playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
     if (playerChoice === 'Rock' 
         || playerChoice === 'Paper' 
-        || playerChoice === 'Scissor') {
+        || playerChoice === 'Scissors') {
         return playerChoice;
     } else if (playerChoice !== 'Rock' 
                 || playerChoice !== 'Paper' 
-                || playerChoice !== 'Scissor') {
-        console.log("Your weapon of chocie doesn't exist. \nYou must choose between 'Rock', 'Paper' or 'Scissor'."); 
+                || playerChoice !== 'Scissors') {
+        console.log("Your weapon of chocie doesn't exist. \nYou must choose between 'Rock', 'Paper' or 'Scissors'."); 
         return getPlayerChoice();
     }
 }
@@ -42,32 +41,42 @@ function playSingleRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         console.log('Round tied! You have to choose a weapon again.');
         playerSelection = getPlayerChoice();
+        if (playerSelection == undefined) { //could return null
+            let cancelGameRequest = confirm('Do you want to cancel the game?');
+            if (cancelGameRequest) {
+                console.log('You have canceled the game.')
+                return; 
+            } else {
+                console.log('OK! Continue the game.');  
+                playerSelection = getPlayerChoice();
+            }
+        }
         computerSelection = getComputerChoice();
-        return (playSingleRound(playerSelection, computerSelection));
+        return playSingleRound(playerSelection, computerSelection);
     } else if (playerSelection === 'Rock' 
-                && computerSelection === 'Scissor') {
+                && computerSelection === 'Scissors') {
         playerScore++;
-        return 'You Won the round! Rock beats Scissor';
+        return 'You Won the round! Rock beats Scissors';
     } else if (playerSelection === 'Paper' 
                 && computerSelection === 'Rock') {
         playerScore++;
         return 'You Won the round! Paper beats Rock';
-    } else if (playerSelection === 'Scissor' 
+    } else if (playerSelection === 'Scissors' 
                 && computerSelection === 'Paper') {
         playerScore++;
-        return 'You Won the round! Scissor beats Paper';
-    } else if (playerSelection === 'Scissor' 
+        return 'You Won the round! Scissors beats Paper';
+    } else if (playerSelection === 'Scissors' 
                 && computerSelection === 'Rock') {
         computerScore++;
-        return 'You Lost the round! Rock beats Scissor';        
+        return 'You Lost the round! Rock beats Scissors';        
     } else if (playerSelection === 'Rock' 
                 && computerSelection === 'Paper') {
         computerScore++;
         return 'You Lost the round! Paper beats Rock';
     } else if (playerSelection === 'Paper' 
-                && computerSelection === 'Scissor') {
+                && computerSelection === 'Scissors') {
         computerScore++;
-        return 'You Lost the round! Scissor beats Paper';
+        return 'You Lost the round! Scissors beats Paper';
     } else if (playerSelection == undefined) {
         return 'No second chance this time';
     }
