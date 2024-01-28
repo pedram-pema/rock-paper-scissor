@@ -26,7 +26,7 @@ function getPlayerChoice() {
     } else if (playerChoice !== 'Rock' 
                 || playerChoice !== 'Paper' 
                 || playerChoice !== 'Scissors') {
-        console.log("Your weapon of chocie doesn't exist. \nYou must choose between 'Rock', 'Paper' or 'Scissors'."); 
+        console.log("Your weapon of choice doesn't exist. \nYou must choose between 'Rock', 'Paper' or 'Scissors'."); 
         return getPlayerChoice();
     }
 }
