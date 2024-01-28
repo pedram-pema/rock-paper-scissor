@@ -9,28 +9,6 @@ function getComputerChoice() {
     }
 }
 
-function getPlayerChoice() {
-    let playerChoice = prompt('Choose your weapon between Rock, Paper or Scissors!', '');
-    switch(playerChoice) {
-        case null:
-            return;
-        case '':
-            console.log("You haven't selected anything! \nChoose a weapon first.");
-            return getPlayerChoice();
-    }
-    playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
-    if (playerChoice === 'Rock' 
-        || playerChoice === 'Paper' 
-        || playerChoice === 'Scissors') {
-        return playerChoice;
-    } else if (playerChoice !== 'Rock' 
-                || playerChoice !== 'Paper' 
-                || playerChoice !== 'Scissors') {
-        console.log("Your weapon of choice doesn't exist. \nYou must choose between 'Rock', 'Paper' or 'Scissors'."); 
-        return getPlayerChoice();
-    }
-}
-
 let playerScore = 0;
 let computerScore = 0;
 /* variables above are declared to be used for counting score at the end of match and each round.
