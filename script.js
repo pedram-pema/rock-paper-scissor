@@ -9,6 +9,24 @@ function getComputerChoice() {
     }
 }
 
+let rock = document.querySelector(".rock");
+let paper = document.querySelector(".paper");
+let scissors = document.querySelector(".scissors");
+
+let playerSelection = '';
+
+rock.addEventListener('click', () => {
+    playerSelection = 'Rock';
+});
+
+paper.addEventListener('click', () => {
+    playerSelection = "Paper";
+});
+
+scissor.addEventListener('click', () => {
+    playerSelection = "Scissor";
+});
+
 let playerScore = 0;
 let computerScore = 0;
 /* variables above are declared to be used for counting score at the end of match and each round.
