@@ -1,4 +1,4 @@
-function getComputerChoice() {
+function computerSelection() {
     const randomChoice = Math.floor(Math.random() * 3);
     if (randomChoice === 0) {
         return 'Rock';
@@ -12,26 +12,36 @@ function getComputerChoice() {
 let rock = document.querySelector(".rock");
 let paper = document.querySelector(".paper");
 let scissors = document.querySelector(".scissors");
-
-let playerSelection = '';
-
-rock.addEventListener('click', () => {
-    playerSelection = 'Rock';
-});
-
-paper.addEventListener('click', () => {
-    playerSelection = "Paper";
-});
-
-scissor.addEventListener('click', () => {
-    playerSelection = "Scissor";
-});
+let buttons = document.querySelectorAll("button");
 
 let playerScore = 0;
 let computerScore = 0;
 /* variables above are declared to be used for counting score at the end of match and each round.
 Each win is counted as one point for the winner.
  */
+
+let playerSelection;
+function getPlayerChoice() {
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            playerSelection = button.value;
+        });
+    });
+}
+
+
+rock.addEventListener('click', () => {
+    rock.value = 'new value';
+});
+
+paper.addEventListener('click', () => {
+
+});
+
+scissors.addEventListener('click', () => {
+
+});
+
 
 function playSingleRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
