@@ -8,6 +8,7 @@ let rock = document.querySelector(".rock");
 let paper = document.querySelector(".paper");
 let scissors = document.querySelector(".scissors");
 let buttons = document.querySelectorAll("button");
+let board = document.querySelector(".board");
 
 function getComputerChoice() {
     const randomChoice = Math.floor(Math.random() * 3);
@@ -24,18 +25,21 @@ rock.addEventListener('click', () => {
     let computerSelection = getComputerChoice();
     let playerSelection = "Rock";
     playSingleRound(playerSelection, computerSelection);
+    board.textContent = `${playerScore} - ${computerScore}`;
 });
 
 paper.addEventListener('click', () => {
     let computerSelection = getComputerChoice();
     let playerSelection = "Paper"
     playSingleRound(playerSelection, computerSelection);
+    board.textContent = `${playerScore} - ${computerScore}`;
 });
 
 scissors.addEventListener('click', () => {
     let computerSelection = getComputerChoice();
     let playerSelection = "Scissors";
     playSingleRound(playerSelection, computerSelection);
+    board.textContent = `${playerScore} - ${computerScore}`;
 });
 
 function playSingleRound(playerSelection, computerSelection) {
@@ -82,8 +86,6 @@ function playSingleRound(playerSelection, computerSelection) {
         console.log('No second chance this time');
     }
 }
-
-
 
 /* function showCommentary() {
     if (playerScore > computerScore 
