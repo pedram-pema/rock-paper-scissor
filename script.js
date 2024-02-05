@@ -26,6 +26,18 @@ rock.addEventListener('click', () => {
     let playerSelection = "Rock";
     playSingleRound(playerSelection, computerSelection);
     board.textContent = `${playerScore} - ${computerScore}`;
+
+    if (playerScore === 5) {
+        console.log("Game is decided!");
+        setTimeout(() => {
+            alert("You won!");
+        }, 0);
+    } else if (computerScore === 5) {
+        console.log("Game is decided");
+        setTimeout(() => {
+            alert("You lost!");
+        }, 0);
+    }
 });
 
 paper.addEventListener('click', () => {
@@ -33,6 +45,18 @@ paper.addEventListener('click', () => {
     let playerSelection = "Paper"
     playSingleRound(playerSelection, computerSelection);
     board.textContent = `${playerScore} - ${computerScore}`;
+
+    if (playerScore === 5) {
+        console.log("Game is decided!");
+        setTimeout(() => {
+            alert("You won!");
+        }, 0);
+    } else if (computerScore === 5) {
+        console.log("Game is decided");
+        setTimeout(() => {
+            alert("You lost!");
+        }, 0);
+    }
 });
 
 scissors.addEventListener('click', () => {
@@ -40,6 +64,18 @@ scissors.addEventListener('click', () => {
     let playerSelection = "Scissors";
     playSingleRound(playerSelection, computerSelection);
     board.textContent = `${playerScore} - ${computerScore}`;
+
+    if (playerScore === 5) {
+        console.log("Game is decided!");
+        setTimeout(() => {
+            alert("You won!");
+        }, 0);
+    } else if (computerScore === 5) {
+        console.log("Game is decided");
+        setTimeout(() => {
+            alert("You lost!");
+        }, 0);
+    }
 });
 
 function playSingleRound(playerSelection, computerSelection) {
