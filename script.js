@@ -1,4 +1,15 @@
-function computerSelection() {
+let playerScore = 0;
+let computerScore = 0;
+/* variables above are declared to be used for counting score at the end of match and each round.
+Each win is counted as one point for the winner.
+ */
+
+let rock = document.querySelector(".rock");
+let paper = document.querySelector(".paper");
+let scissors = document.querySelector(".scissors");
+let buttons = document.querySelectorAll("button");
+
+function getComputerChoice() {
     const randomChoice = Math.floor(Math.random() * 3);
     if (randomChoice === 0) {
         return 'Rock';
@@ -9,44 +20,28 @@ function computerSelection() {
     }
 }
 
-let rock = document.querySelector(".rock");
-let paper = document.querySelector(".paper");
-let scissors = document.querySelector(".scissors");
-let buttons = document.querySelectorAll("button");
-
-let playerScore = 0;
-let computerScore = 0;
-/* variables above are declared to be used for counting score at the end of match and each round.
-Each win is counted as one point for the winner.
- */
-
-let playerSelection;
-function getPlayerChoice() {
-    buttons.forEach((button) => {
-        button.addEventListener('click', () => {
-            playerSelection = button.value;
-        });
-    });
-}
-
-
 rock.addEventListener('click', () => {
-    rock.value = 'new value';
+    let computerSelection = getComputerChoice();
+    let playerSelection = "Rock";
+    playSingleRound(playerSelection, computerSelection);
 });
 
 paper.addEventListener('click', () => {
-
+    let computerSelection = getComputerChoice();
+    let playerSelection = "Paper"
+    playSingleRound(playerSelection, computerSelection);
 });
 
 scissors.addEventListener('click', () => {
-
+    let computerSelection = getComputerChoice();
+    let playerSelection = "Scissors";
+    playSingleRound(playerSelection, computerSelection);
 });
-
 
 function playSingleRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         console.log('Round tied! You have to choose a weapon again.');
-        playerSelection = getPlayerChoice();
+/*         playerSelection = getPlayerChoice();
         if (playerSelection == undefined) { //could return null
             let cancelGameRequest = confirm('Do you want to cancel the game?');
             if (cancelGameRequest) {
@@ -58,37 +53,39 @@ function playSingleRound(playerSelection, computerSelection) {
             }
         }
         computerSelection = getComputerChoice();
-        return playSingleRound(playerSelection, computerSelection);
+        return playSingleRound(playerSelection, computerSelection); */
     } else if (playerSelection === 'Rock' 
                 && computerSelection === 'Scissors') {
         playerScore++;
-        return 'You Won the round! Rock beats Scissors';
+        console.log('You Won the round! Rock beats Scissors');
     } else if (playerSelection === 'Paper' 
                 && computerSelection === 'Rock') {
         playerScore++;
-        return 'You Won the round! Paper beats Rock';
+        console.log('You Won the round! Paper beats Rock');
     } else if (playerSelection === 'Scissors' 
                 && computerSelection === 'Paper') {
         playerScore++;
-        return 'You Won the round! Scissors beats Paper';
+        console.log('You Won the round! Scissors beats Paper');
     } else if (playerSelection === 'Scissors' 
                 && computerSelection === 'Rock') {
         computerScore++;
-        return 'You Lost the round! Rock beats Scissors';        
+        console.log('You Lost the round! Rock beats Scissors');
     } else if (playerSelection === 'Rock' 
                 && computerSelection === 'Paper') {
         computerScore++;
-        return 'You Lost the round! Paper beats Rock';
+        console.log('You Lost the round! Paper beats Rock');
     } else if (playerSelection === 'Paper' 
                 && computerSelection === 'Scissors') {
         computerScore++;
-        return 'You Lost the round! Scissors beats Paper';
+        console.log('You Lost the round! Scissors beats Paper');
     } else if (playerSelection == undefined) {
-        return 'No second chance this time';
+        console.log('No second chance this time');
     }
 }
 
-function showCommentary() {
+
+
+/* function showCommentary() {
     if (playerScore > computerScore 
         && playerScore !== 3 
         && computerScore !== 3) {
@@ -106,9 +103,7 @@ function showCommentary() {
         return `Final result is: ${playerScore}-${computerScore}!`;
     }
 }
-
-
-
+ */
 // function replay() {
 //     game();
 // }
