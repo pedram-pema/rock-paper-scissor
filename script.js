@@ -1,3 +1,15 @@
+let playerScore = 0;
+let computerScore = 0;
+/* variables above are declared to be used for counting score at the end of match and each round.
+Each win is counted as one point for the winner.
+ */
+
+let rock = document.querySelector(".rock");
+let paper = document.querySelector(".paper");
+let scissors = document.querySelector(".scissors");
+let buttons = document.querySelectorAll("button");
+let board = document.querySelector(".board");
+
 function getComputerChoice() {
     const randomChoice = Math.floor(Math.random() * 3);
     if (randomChoice === 0) {
@@ -9,6 +21,7 @@ function getComputerChoice() {
     }
 }
 
+<<<<<<< HEAD
 function getPlayerChoice() {
     let playerChoice = prompt('Choose your weapon between Rock, Paper or Scissors!', '');
     switch(playerChoice) {
@@ -30,17 +43,69 @@ function getPlayerChoice() {
         return getPlayerChoice();
     }
 }
+=======
+rock.addEventListener('click', () => {
+    let computerSelection = getComputerChoice();
+    let playerSelection = "Rock";
+    playSingleRound(playerSelection, computerSelection);
+    board.textContent = `${playerScore} - ${computerScore}`;
+>>>>>>> rps-ui
 
-let playerScore = 0;
-let computerScore = 0;
-/* variables above are declared to be used for counting score at the end of match and each round.
-Each win is counted as one point for the winner.
- */
+    if (playerScore === 5) {
+        console.log("Game is decided!");
+        setTimeout(() => {
+            alert("You won!");
+        }, 0);
+    } else if (computerScore === 5) {
+        console.log("Game is decided");
+        setTimeout(() => {
+            alert("You lost!");
+        }, 0);
+    }
+});
+
+paper.addEventListener('click', () => {
+    let computerSelection = getComputerChoice();
+    let playerSelection = "Paper"
+    playSingleRound(playerSelection, computerSelection);
+    board.textContent = `${playerScore} - ${computerScore}`;
+
+    if (playerScore === 5) {
+        console.log("Game is decided!");
+        setTimeout(() => {
+            alert("You won!");
+        }, 0);
+    } else if (computerScore === 5) {
+        console.log("Game is decided");
+        setTimeout(() => {
+            alert("You lost!");
+        }, 0);
+    }
+});
+
+scissors.addEventListener('click', () => {
+    let computerSelection = getComputerChoice();
+    let playerSelection = "Scissors";
+    playSingleRound(playerSelection, computerSelection);
+    board.textContent = `${playerScore} - ${computerScore}`;
+
+    if (playerScore === 5) {
+        console.log("Game is decided!");
+        setTimeout(() => {
+            alert("You won!");
+        }, 0);
+    } else if (computerScore === 5) {
+        console.log("Game is decided");
+        setTimeout(() => {
+            alert("You lost!");
+        }, 0);
+    }
+});
 
 function playSingleRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         console.log('Round tied! You have to choose a weapon again.');
-        playerSelection = getPlayerChoice();
+/*         playerSelection = getPlayerChoice();
         if (playerSelection == undefined) { //could return null
             let cancelGameRequest = confirm('Do you want to cancel the game?');
             if (cancelGameRequest) {
@@ -52,37 +117,37 @@ function playSingleRound(playerSelection, computerSelection) {
             }
         }
         computerSelection = getComputerChoice();
-        return playSingleRound(playerSelection, computerSelection);
+        return playSingleRound(playerSelection, computerSelection); */
     } else if (playerSelection === 'Rock' 
                 && computerSelection === 'Scissors') {
         playerScore++;
-        return 'You Won the round! Rock beats Scissors';
+        console.log('You Won the round! Rock beats Scissors');
     } else if (playerSelection === 'Paper' 
                 && computerSelection === 'Rock') {
         playerScore++;
-        return 'You Won the round! Paper beats Rock';
+        console.log('You Won the round! Paper beats Rock');
     } else if (playerSelection === 'Scissors' 
                 && computerSelection === 'Paper') {
         playerScore++;
-        return 'You Won the round! Scissors beats Paper';
+        console.log('You Won the round! Scissors beats Paper');
     } else if (playerSelection === 'Scissors' 
                 && computerSelection === 'Rock') {
         computerScore++;
-        return 'You Lost the round! Rock beats Scissors';        
+        console.log('You Lost the round! Rock beats Scissors');
     } else if (playerSelection === 'Rock' 
                 && computerSelection === 'Paper') {
         computerScore++;
-        return 'You Lost the round! Paper beats Rock';
+        console.log('You Lost the round! Paper beats Rock');
     } else if (playerSelection === 'Paper' 
                 && computerSelection === 'Scissors') {
         computerScore++;
-        return 'You Lost the round! Scissors beats Paper';
+        console.log('You Lost the round! Scissors beats Paper');
     } else if (playerSelection == undefined) {
-        return 'No second chance this time';
+        console.log('No second chance this time');
     }
 }
 
-function showCommentary() {
+/* function showCommentary() {
     if (playerScore > computerScore 
         && playerScore !== 3 
         && computerScore !== 3) {
@@ -100,122 +165,7 @@ function showCommentary() {
         return `Final result is: ${playerScore}-${computerScore}!`;
     }
 }
-
-function game() {
-    let playerSelection;
-    let computerSelection;
-
-    playerSelection = getPlayerChoice();
-    if (playerSelection == undefined) {
-        let cancelGameRequest = confirm('Do you want to cancel the game?');
-        if (cancelGameRequest) {
-            console.log('You have canceled the game.')
-            return;
-        } else {
-            console.log('OK! Continue the game.');  
-            playerSelection = getPlayerChoice();
-        }
-    } 
-    computerSelection = getComputerChoice();
-    console.log(playSingleRound(playerSelection, computerSelection));
-    if (playerSelection == undefined) {
-        return;
-    }
-    console.log(showCommentary());
-
-
-    playerSelection = getPlayerChoice();
-    if (playerSelection == undefined) {
-        let cancelGameRequest = confirm('Do you want to cancel the game?');
-        if (cancelGameRequest) {
-            console.log('You have canceled the game.')
-            return;
-        } else {
-            console.log('OK! Continue the game.');
-            playerSelection = getPlayerChoice();
-        }
-    }
-    computerSelection = getComputerChoice();
-    console.log(playSingleRound(playerSelection, computerSelection));
-    if (playerSelection == undefined) {
-        return;
-    }
-    console.log(showCommentary());
-
-
-    playerSelection = getPlayerChoice();
-    if (playerSelection == undefined) {
-        let cancelGameRequest = confirm('Do you want to cancel the game?');
-        if (cancelGameRequest) {
-            console.log('You have canceled the game.')
-            return;
-        } else {
-            console.log('OK! Continue the game.');
-            playerSelection = getPlayerChoice();
-        }
-    }
-    computerSelection = getComputerChoice();
-    console.log(playSingleRound(playerSelection, computerSelection));
-    if (playerSelection == undefined) {
-        return;
-    }
-    console.log(showCommentary());
-    if (playerScore === 3) {
-        return console.log('MEGA JOB! You won the game.');
-    } else if (computerScore === 3) {
-        return console.log('CRUSHING DEFEAT! Computer have won.');
-    }
-
-
-    playerSelection = getPlayerChoice();
-    if (playerSelection == undefined) {
-        let cancelGameRequest = confirm('Do you want to cancel the game?');
-        if (cancelGameRequest) {
-            console.log('You have canceled the game.')
-            return;
-        } else {
-            console.log('OK! Continue the game.');
-            playerSelection = getPlayerChoice();
-        }
-    }
-    computerSelection = getComputerChoice();
-    console.log(playSingleRound(playerSelection, computerSelection));
-    if (playerSelection == undefined) {
-        return;
-    }
-    console.log(showCommentary());
-    if (playerScore === 3) {
-        return console.log('MEGA JOB! You won the game.');
-    } else if (computerScore === 3) {
-        return console.log('CRUSHING DEFEAT! Computer have won.');
-    }
-
-
-    playerSelection = getPlayerChoice();
-    if (playerSelection == undefined) {
-        let cancelGameRequest = confirm('Do you want to cancel the game?');
-        if (cancelGameRequest) {
-            console.log('You have canceled the game.')
-            return;
-        } else {
-            console.log('OK! Continue the game.');
-            playerSelection = getPlayerChoice();
-        }   
-    }
-    computerSelection = getComputerChoice();
-    console.log(playSingleRound(playerSelection, computerSelection));
-    if (playerSelection == undefined) {
-        return;
-    }
-    console.log(showCommentary());
-    if (playerScore === 3) {
-        return console.log('MEGA JOB! You won the game.');
-    } else if (computerScore === 3) {
-        return console.log('CRUSHING DEFEAT! Computer have won.');
-    }
-}
-game();
-
+ */
 // function replay() {
 //     game();
 // }
