@@ -21,35 +21,11 @@ function getComputerChoice() {
     }
 }
 
-<<<<<<< HEAD
-function getPlayerChoice() {
-    let playerChoice = prompt('Choose your weapon between Rock, Paper or Scissors!', '');
-    switch(playerChoice) {
-        case null:
-            return;
-        case '':
-            console.log("You haven't selected anything! \nChoose a weapon first.");
-            return getPlayerChoice();
-    }
-    playerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
-    if (playerChoice === 'Rock' 
-        || playerChoice === 'Paper' 
-        || playerChoice === 'Scissors') {
-        return playerChoice;
-    } else if (playerChoice !== 'Rock' 
-                || playerChoice !== 'Paper' 
-                || playerChoice !== 'Scissors') {
-        console.log("Your weapon of choice doesn't exist. \nYou must choose between 'Rock', 'Paper' or 'Scissors'."); 
-        return getPlayerChoice();
-    }
-}
-=======
 rock.addEventListener('click', () => {
     let computerSelection = getComputerChoice();
     let playerSelection = "Rock";
     playSingleRound(playerSelection, computerSelection);
     board.textContent = `${playerScore} - ${computerScore}`;
->>>>>>> rps-ui
 
     if (playerScore === 5) {
         console.log("Game is decided!");
