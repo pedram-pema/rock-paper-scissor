@@ -13,7 +13,12 @@ html {
 }
 
 button {
+    width: 86px;
     font-family: inherit;
+    font-weight: bold;
+    letter-spacing: 0.75px;
+    padding: 8px 12px;
+    border-radius: 10px;
 }
 
 .container {
