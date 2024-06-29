@@ -22,7 +22,14 @@ html {
     background-color: darkblue;
     color: lightgoldenrodyellow;
     border: 2px solid lightgoldenrodyellow;
+    transition-duration: 0.5s;
+}
 
+.btn:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24);
 }
 
 .buttons {
