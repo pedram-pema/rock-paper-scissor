@@ -34,7 +34,7 @@ html {
 
 .buttons {
     background-color: rgb(211, 211, 211);
-    padding: 50px 0px;
+    padding: 30px 0px;
 }
 
 .container {
@@ -52,8 +52,16 @@ h1 {
 
 .title {
     background-color:rgba(48, 138, 216, 0.29);
-    height: 150px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.CAT {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(211, 211, 211);
+    padding-top: 15px;
 }
