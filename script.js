@@ -21,6 +21,13 @@ function getComputerChoice() {
     }
 }
 
+let button = document.querySelector(".btn");
+let roundCounter = 0;
+button.addEventListener("click", () => {
+    ++roundCounter;
+    console.log(roundCounter);
+});
+
 rock.addEventListener('click', () => {
     let computerSelection = getComputerChoice();
     let playerSelection = "Rock";
