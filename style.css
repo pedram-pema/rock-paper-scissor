@@ -60,8 +60,13 @@ h1 {
 
 .CAT {
     display: flex;
+    flex-flow: column;
     justify-content: center;
     text-align: center;
     background-color: rgb(211, 211, 211);
     padding-top: 15px;
+}
+
+.bold {
+    font-weight: bold;
 }
