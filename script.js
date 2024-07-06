@@ -22,10 +22,14 @@ function getComputerChoice() {
 }
 
 let button = document.querySelector(".btn");
+let counterText = document.querySelector(".round-counter");
 let roundCounter = 0;
 button.addEventListener("click", () => {
     ++roundCounter;
     console.log(roundCounter);
+    if (roundCounter > 1) {
+        counterText.textContent = `Round ${roundCounter}, Go!`
+    }
 });
 
 rock.addEventListener('click', () => {
