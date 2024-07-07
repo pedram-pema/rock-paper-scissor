@@ -21,15 +21,13 @@ function getComputerChoice() {
     }
 }
 
-let button = document.querySelector(".btn");
 let counterText = document.querySelector(".round-counter");
 let roundCounter = 0;
-button.addEventListener("click", () => {
-    ++roundCounter;
-    console.log(roundCounter);
-    if (roundCounter > 1) {
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        ++roundCounter;
         counterText.textContent = `Round ${roundCounter}, Go!`
-    }
+    });
 });
 
 rock.addEventListener('click', () => {
@@ -42,12 +40,12 @@ rock.addEventListener('click', () => {
         console.log("Game is decided!");
         setTimeout(() => {
             alert("You won!");
-        }, 0);
+        }, 50);
     } else if (computerScore === 5) {
         console.log("Game is decided");
         setTimeout(() => {
             alert("You lost!");
-        }, 0);
+        }, 50);
     }
 });
 
@@ -61,12 +59,12 @@ paper.addEventListener('click', () => {
         console.log("Game is decided!");
         setTimeout(() => {
             alert("You won!");
-        }, 0);
+        }, 50);
     } else if (computerScore === 5) {
         console.log("Game is decided");
         setTimeout(() => {
             alert("You lost!");
-        }, 0);
+        }, 50);
     }
 });
 
@@ -80,12 +78,12 @@ scissors.addEventListener('click', () => {
         console.log("Game is decided!");
         setTimeout(() => {
             alert("You won!");
-        }, 0);
+        }, 50);
     } else if (computerScore === 5) {
         console.log("Game is decided");
         setTimeout(() => {
             alert("You lost!");
-        }, 0);
+        }, 50);
     }
 });
 
