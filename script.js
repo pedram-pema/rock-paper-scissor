@@ -22,12 +22,14 @@ function getComputerChoice() {
 }
 
 let counterText = document.querySelector(".round-counter");
+let instructionText = document.querySelector("#instruction-text");
 let roundCounter = 0;
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         ++roundCounter;
         counterText.textContent = `Round ${roundCounter}, Go!`
         counterText.style.fontWeight = "bold";
+        instructionText.style.display = "none";
     });
 });
 
