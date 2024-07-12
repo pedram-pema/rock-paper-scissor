@@ -34,7 +34,7 @@ rock.addEventListener('click', () => {
     let computerSelection = getComputerChoice();
     let playerSelection = "Rock";
     playSingleRound(playerSelection, computerSelection);
-    board.textContent = `${playerScore} - ${computerScore}`;
+    board.textContent = `You ${playerScore} - ${computerScore} Computer`;
 
     if (playerScore === 5) {
         console.log("Game is decided!");
@@ -53,7 +53,7 @@ paper.addEventListener('click', () => {
     let computerSelection = getComputerChoice();
     let playerSelection = "Paper"
     playSingleRound(playerSelection, computerSelection);
-    board.textContent = `${playerScore} - ${computerScore}`;
+    board.textContent = `You ${playerScore} - ${computerScore} Computer`;
 
     if (playerScore === 5) {
         console.log("Game is decided!");
@@ -72,7 +72,7 @@ scissors.addEventListener('click', () => {
     let computerSelection = getComputerChoice();
     let playerSelection = "Scissors";
     playSingleRound(playerSelection, computerSelection);
-    board.textContent = `${playerScore} - ${computerScore}`;
+    board.textContent = `You ${playerScore} - ${computerScore} Computer`;
 
     if (playerScore === 5) {
         console.log("Game is decided!");
@@ -118,3 +118,5 @@ function playSingleRound(playerSelection, computerSelection) {
         console.log('No second chance this time');
     }
 }
+
+// TODO: Create custom event after winner announcement for restart

@@ -70,3 +70,9 @@ h1 {
 .bold {
     font-weight: bold;
 }
+
+.livescore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
