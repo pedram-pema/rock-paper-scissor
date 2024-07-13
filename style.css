@@ -75,4 +75,18 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: blanchedalmond;
+    padding: 30px 0px;
 }
+
+.board {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.scoretext {
+    font-style: italic;
+    font-size: 14px;
+}
+
+/* TODO: Add 0 padding to universal reset */
