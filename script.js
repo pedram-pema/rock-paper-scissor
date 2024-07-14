@@ -20,6 +20,7 @@ function getComputerChoice() {
 
 let counterText = document.querySelector(".round-counter");
 let instructionText = document.querySelector("#instruction-text");
+let scoretext = document.querySelector(".scoretext");
 let roundCounter = 0;
 buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -27,6 +28,7 @@ buttons.forEach(button => {
         counterText.textContent = `Round ${roundCounter}, Go!`
         counterText.style.fontWeight = "bold";
         instructionText.style.display = "none";
+        scoretext.style.display = "none";
     });
 });
 
