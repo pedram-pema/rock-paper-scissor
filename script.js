@@ -18,6 +18,16 @@ function getComputerChoice() {
     }
 }
 
+function scoreReactor(playerScore, computerScore) {
+    if (playerScore > computerScore) {
+        instructionText.innerHTML = `<p>You are leading by ${playerScore-computerScore}, Good job!</p>`;
+    } else if (computerScore > playerScore) {
+        instructionText.innerHTML = `<p>You are loosing by ${computerScore-playerScore}, Hurry up!</p>`;
+    } else {
+        instructionText.innerHTML = `<p>It's tied, Keep pushing</p`;
+    }
+}
+
 let counterText = document.querySelector(".round-counter");
 let instructionText = document.querySelector("#instruction-text");
 let scoretext = document.querySelector(".scoretext");
@@ -27,7 +37,7 @@ buttons.forEach(button => {
         ++roundCounter;
         counterText.textContent = `Round ${roundCounter}, Go!`
         counterText.style.fontWeight = "bold";
-        instructionText.style.display = "none";
+        // instructionText.style.display = "none";
         scoretext.style.display = "none";
     });
 });
@@ -37,6 +47,7 @@ rock.addEventListener('click', () => {
     let playerSelection = "Rock";
     playSingleRound(playerSelection, computerSelection);
     board.textContent = `You ${playerScore} - ${computerScore} Computer`;
+    scoreReactor(playerScore, computerScore);
 
     if (playerScore === 5) {
         console.log("Game is decided!");
@@ -56,6 +67,7 @@ paper.addEventListener('click', () => {
     let playerSelection = "Paper"
     playSingleRound(playerSelection, computerSelection);
     board.textContent = `You ${playerScore} - ${computerScore} Computer`;
+    scoreReactor(playerScore, computerScore);
 
     if (playerScore === 5) {
         console.log("Game is decided!");
@@ -75,6 +87,7 @@ scissors.addEventListener('click', () => {
     let playerSelection = "Scissors";
     playSingleRound(playerSelection, computerSelection);
     board.textContent = `You ${playerScore} - ${computerScore} Computer`;
+    scoreReactor(playerScore, computerScore);
 
     if (playerScore === 5) {
         console.log("Game is decided!");
