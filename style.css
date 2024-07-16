@@ -73,6 +73,7 @@ h1 {
 
 .livescore {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: blanchedalmond;
@@ -89,4 +90,11 @@ h1 {
     font-size: 14px;
 }
 
-/* TODO: Add 0 padding to universal reset */
+.report-box {
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 12px;
+    margin-top: 25px;
+    min-width: 250px;
+    min-height: 100px;
+}

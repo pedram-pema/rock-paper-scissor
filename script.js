@@ -38,9 +38,14 @@ buttons.forEach(button => {
         counterText.textContent = `Round ${roundCounter}, Go!`
         counterText.style.fontWeight = "bold";
         // instructionText.style.display = "none";
+        // why scoreReactor doesn't work here?
         scoretext.style.display = "none";
     });
 });
+
+/* function gameReport(playerScore, computerScore) {
+
+} */
 
 rock.addEventListener('click', () => {
     let computerSelection = getComputerChoice();
