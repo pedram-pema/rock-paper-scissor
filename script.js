@@ -32,6 +32,9 @@ let counterText = document.querySelector(".round-counter");
 let instructionText = document.querySelector("#instruction-text");
 let scoretext = document.querySelector(".scoretext");
 let roundCounter = 0;
+let roundCommentary = '';
+let reportBox = document.querySelector(".report-box");
+
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         ++roundCounter;
@@ -53,6 +56,7 @@ rock.addEventListener('click', () => {
     playSingleRound(playerSelection, computerSelection);
     board.textContent = `You ${playerScore} - ${computerScore} Computer`;
     scoreReactor(playerScore, computerScore);
+    reportBox.innerHTML += `<p>${roundCommentary}</p>`;
 
     if (playerScore === 5) {
         console.log("Game is decided!");
@@ -73,6 +77,7 @@ paper.addEventListener('click', () => {
     playSingleRound(playerSelection, computerSelection);
     board.textContent = `You ${playerScore} - ${computerScore} Computer`;
     scoreReactor(playerScore, computerScore);
+    reportBox.innerHTML += `<p>${roundCommentary}</p>`;
 
     if (playerScore === 5) {
         console.log("Game is decided!");
@@ -93,6 +98,7 @@ scissors.addEventListener('click', () => {
     playSingleRound(playerSelection, computerSelection);
     board.textContent = `You ${playerScore} - ${computerScore} Computer`;
     scoreReactor(playerScore, computerScore);
+    reportBox.innerHTML += `<p>${roundCommentary}</p>`;
 
     if (playerScore === 5) {
         console.log("Game is decided!");
@@ -109,31 +115,31 @@ scissors.addEventListener('click', () => {
 
 function playSingleRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        console.log('Round tied! You have to choose a weapon again.');
+        roundCommentary = 'Round tied!';
     } else if (playerSelection === 'Rock' 
                 && computerSelection === 'Scissors') {
         playerScore++;
-        console.log('You Won the round! Rock beats Scissors');
+        roundCommentary = 'You Won the round! Rock beats Scissors';
     } else if (playerSelection === 'Paper' 
                 && computerSelection === 'Rock') {
         playerScore++;
-        console.log('You Won the round! Paper beats Rock');
+        roundCommentary = 'You Won the round! Paper beats Rock';
     } else if (playerSelection === 'Scissors' 
                 && computerSelection === 'Paper') {
         playerScore++;
-        console.log('You Won the round! Scissors beats Paper');
+        roundCommentary = 'You Won the round! Scissors beats Paper';
     } else if (playerSelection === 'Scissors' 
                 && computerSelection === 'Rock') {
         computerScore++;
-        console.log('You Lost the round! Rock beats Scissors');
+        roundCommentary = 'You Lost the round! Rock beats Scissors';
     } else if (playerSelection === 'Rock' 
                 && computerSelection === 'Paper') {
         computerScore++;
-        console.log('You Lost the round! Paper beats Rock');
+        roundCommentary = 'You Lost the round! Paper beats Rock';
     } else if (playerSelection === 'Paper' 
                 && computerSelection === 'Scissors') {
         computerScore++;
-        console.log('You Lost the round! Scissors beats Paper');
+        roundCommentary = 'You Lost the round! Scissors beats Paper';
     } else if (playerSelection == undefined) {
         console.log('No second chance this time');
     }
