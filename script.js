@@ -43,6 +43,7 @@ buttons.forEach(button => {
         // instructionText.style.display = "none";
         // why scoreReactor doesn't work here?
         scoretext.style.display = "none";
+        reportBox.style.display = "initial";
     });
 });
 
