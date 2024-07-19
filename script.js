@@ -57,7 +57,7 @@ rock.addEventListener('click', () => {
     playSingleRound(playerSelection, computerSelection);
     board.textContent = `You ${playerScore} - ${computerScore} Computer`;
     scoreReactor(playerScore, computerScore);
-    reportBox.innerHTML += `<p>${roundCommentary}</p>`;
+    reportBox.innerHTML += `<p>Round ${roundCounter}: ${roundCommentary}</p>`;
 
     if (playerScore === 5) {
         console.log("Game is decided!");
@@ -78,7 +78,7 @@ paper.addEventListener('click', () => {
     playSingleRound(playerSelection, computerSelection);
     board.textContent = `You ${playerScore} - ${computerScore} Computer`;
     scoreReactor(playerScore, computerScore);
-    reportBox.innerHTML += `<p>${roundCommentary}</p>`;
+    reportBox.innerHTML += `<p>Round ${roundCounter}: ${roundCommentary}</p>`;
 
     if (playerScore === 5) {
         console.log("Game is decided!");
@@ -99,7 +99,7 @@ scissors.addEventListener('click', () => {
     playSingleRound(playerSelection, computerSelection);
     board.textContent = `You ${playerScore} - ${computerScore} Computer`;
     scoreReactor(playerScore, computerScore);
-    reportBox.innerHTML += `<p>${roundCommentary}</p>`;
+    reportBox.innerHTML += `<p>Round ${roundCounter}: ${roundCommentary}</p>`;
 
     if (playerScore === 5) {
         console.log("Game is decided!");
@@ -120,30 +120,26 @@ function playSingleRound(playerSelection, computerSelection) {
     } else if (playerSelection === 'Rock' 
                 && computerSelection === 'Scissors') {
         playerScore++;
-        roundCommentary = 'You Won the round! Rock beats Scissors';
+        roundCommentary = 'You won! Rock beats Scissors';
     } else if (playerSelection === 'Paper' 
                 && computerSelection === 'Rock') {
         playerScore++;
-        roundCommentary = 'You Won the round! Paper beats Rock';
+        roundCommentary = 'You won! Paper beats Rock';
     } else if (playerSelection === 'Scissors' 
                 && computerSelection === 'Paper') {
         playerScore++;
-        roundCommentary = 'You Won the round! Scissors beats Paper';
+        roundCommentary = 'You won! Scissors beats Paper';
     } else if (playerSelection === 'Scissors' 
                 && computerSelection === 'Rock') {
         computerScore++;
-        roundCommentary = 'You Lost the round! Rock beats Scissors';
+        roundCommentary = 'Computer won! Rock beats Scissors';
     } else if (playerSelection === 'Rock' 
                 && computerSelection === 'Paper') {
         computerScore++;
-        roundCommentary = 'You Lost the round! Paper beats Rock';
+        roundCommentary = 'Computer won! Paper beats Rock';
     } else if (playerSelection === 'Paper' 
                 && computerSelection === 'Scissors') {
         computerScore++;
-        roundCommentary = 'You Lost the round! Scissors beats Paper';
-    } else if (playerSelection == undefined) {
-        console.log('No second chance this time');
+        roundCommentary = 'Computer won! Scissors beats Paper';
     }
 }
-
-// TODO: Create custom event after winner announcement for restart
