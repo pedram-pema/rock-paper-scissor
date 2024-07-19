@@ -57,7 +57,7 @@ rock.addEventListener('click', () => {
     playSingleRound(playerSelection, computerSelection);
     board.textContent = `You ${playerScore} - ${computerScore} Computer`;
     scoreReactor(playerScore, computerScore);
-    reportBox.innerHTML += `<p>Round ${roundCounter}: ${roundCommentary}</p>`;
+    reportBox.innerHTML += `<p><span class="bold">Round ${roundCounter}:</span> ${roundCommentary}</p>`;
 
     if (playerScore === 5) {
         console.log("Game is decided!");
@@ -78,7 +78,7 @@ paper.addEventListener('click', () => {
     playSingleRound(playerSelection, computerSelection);
     board.textContent = `You ${playerScore} - ${computerScore} Computer`;
     scoreReactor(playerScore, computerScore);
-    reportBox.innerHTML += `<p>Round ${roundCounter}: ${roundCommentary}</p>`;
+    reportBox.innerHTML += `<p><span class="bold">Round ${roundCounter}:</span> ${roundCommentary}</p>`;
 
     if (playerScore === 5) {
         console.log("Game is decided!");
@@ -99,7 +99,7 @@ scissors.addEventListener('click', () => {
     playSingleRound(playerSelection, computerSelection);
     board.textContent = `You ${playerScore} - ${computerScore} Computer`;
     scoreReactor(playerScore, computerScore);
-    reportBox.innerHTML += `<p>Round ${roundCounter}: ${roundCommentary}</p>`;
+    reportBox.innerHTML += `<p><span class="bold">Round ${roundCounter}:</span> ${roundCommentary}</p>`;
 
     if (playerScore === 5) {
         console.log("Game is decided!");
