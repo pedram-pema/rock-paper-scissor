@@ -47,17 +47,17 @@ buttons.forEach(button => {
     });
 });
 
-/* function gameReport(playerScore, computerScore) {
-
-} */
+function gameReport(playerScore, computerScore) {
+    board.textContent = `You ${playerScore} - ${computerScore} Computer`;
+    scoreReactor(playerScore, computerScore);
+    reportBox.innerHTML += `<p><span class="bold">Round ${roundCounter}:</span> ${roundCommentary}</p>`;
+}
 
 rock.addEventListener('click', () => {
     let computerSelection = getComputerChoice();
     let playerSelection = "Rock";
     playSingleRound(playerSelection, computerSelection);
-    board.textContent = `You ${playerScore} - ${computerScore} Computer`;
-    scoreReactor(playerScore, computerScore);
-    reportBox.innerHTML += `<p><span class="bold">Round ${roundCounter}:</span> ${roundCommentary}</p>`;
+    gameReport(playerScore, computerScore);
 
     if (playerScore === 5) {
         console.log("Game is decided!");
@@ -76,9 +76,7 @@ paper.addEventListener('click', () => {
     let computerSelection = getComputerChoice();
     let playerSelection = "Paper"
     playSingleRound(playerSelection, computerSelection);
-    board.textContent = `You ${playerScore} - ${computerScore} Computer`;
-    scoreReactor(playerScore, computerScore);
-    reportBox.innerHTML += `<p><span class="bold">Round ${roundCounter}:</span> ${roundCommentary}</p>`;
+    gameReport(playerScore, computerScore);
 
     if (playerScore === 5) {
         console.log("Game is decided!");
@@ -97,9 +95,7 @@ scissors.addEventListener('click', () => {
     let computerSelection = getComputerChoice();
     let playerSelection = "Scissors";
     playSingleRound(playerSelection, computerSelection);
-    board.textContent = `You ${playerScore} - ${computerScore} Computer`;
-    scoreReactor(playerScore, computerScore);
-    reportBox.innerHTML += `<p><span class="bold">Round ${roundCounter}:</span> ${roundCommentary}</p>`;
+    gameReport(playerScore, computerScore);
 
     if (playerScore === 5) {
         console.log("Game is decided!");
@@ -143,3 +139,5 @@ function playSingleRound(playerSelection, computerSelection) {
         roundCommentary = 'Computer won! Scissors beats Paper';
     }
 }
+
+// Add reset button
