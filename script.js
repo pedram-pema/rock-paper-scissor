@@ -53,61 +53,25 @@ function gameReport(playerScore, computerScore) {
     reportBox.innerHTML += `<p><span class="bold">Round ${roundCounter}:</span> ${roundCommentary}</p>`;
 }
 
-rock.addEventListener('click', () => {
-    let computerSelection = getComputerChoice();
-    let playerSelection = "Rock";
-    playSingleRound(playerSelection, computerSelection);
-    gameReport(playerScore, computerScore);
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        let computerSelection = getComputerChoice();
+        let playerSelection = button.textContent;
+        playSingleRound(playerSelection, computerSelection);
+        gameReport(playerScore, computerScore);
 
-    if (playerScore === 5) {
-        console.log("Game is decided!");
-        setTimeout(() => {
-            alert("You won!");
-        }, 50);
-    } else if (computerScore === 5) {
-        console.log("Game is decided");
-        setTimeout(() => {
-            alert("You lost!");
-        }, 50);
-    }
-});
-
-paper.addEventListener('click', () => {
-    let computerSelection = getComputerChoice();
-    let playerSelection = "Paper"
-    playSingleRound(playerSelection, computerSelection);
-    gameReport(playerScore, computerScore);
-
-    if (playerScore === 5) {
-        console.log("Game is decided!");
-        setTimeout(() => {
-            alert("You won!");
-        }, 50);
-    } else if (computerScore === 5) {
-        console.log("Game is decided");
-        setTimeout(() => {
-            alert("You lost!");
-        }, 50);
-    }
-});
-
-scissors.addEventListener('click', () => {
-    let computerSelection = getComputerChoice();
-    let playerSelection = "Scissors";
-    playSingleRound(playerSelection, computerSelection);
-    gameReport(playerScore, computerScore);
-
-    if (playerScore === 5) {
-        console.log("Game is decided!");
-        setTimeout(() => {
-            alert("You won!");
-        }, 50);
-    } else if (computerScore === 5) {
-        console.log("Game is decided");
-        setTimeout(() => {
-            alert("You lost!");
-        }, 50);
-    }
+        if (playerScore === 5) {
+            console.log("Game is decided!");
+            setTimeout(() => {
+                alert("You won!");
+            }, 50);
+        } else if (computerScore === 5) {
+            console.log("Game is decided");
+            setTimeout(() => {
+                alert("You lost!");
+            }, 50);
+        }
+    });
 });
 
 function playSingleRound(playerSelection, computerSelection) {
@@ -140,4 +104,5 @@ function playSingleRound(playerSelection, computerSelection) {
     }
 }
 
-// Add reset button
+// TODO: Add reset button
+// How to make a random event
