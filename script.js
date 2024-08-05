@@ -35,6 +35,12 @@ let roundCounter = 0;
 let roundCommentary = '';
 let reportBox = document.querySelector(".report-box");
 
+function gameReport(playerScore, computerScore) {
+    board.textContent = `You ${playerScore} - ${computerScore} Computer`;
+    scoreReactor(playerScore, computerScore);
+    reportBox.innerHTML += `<p><span class="bold">Round ${roundCounter}:</span> ${roundCommentary}</p>`;
+}
+
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         ++roundCounter;
@@ -44,17 +50,7 @@ buttons.forEach(button => {
         // why scoreReactor doesn't work here?
         scoretext.style.display = "none";
         reportBox.style.display = "initial";
-    });
-});
 
-function gameReport(playerScore, computerScore) {
-    board.textContent = `You ${playerScore} - ${computerScore} Computer`;
-    scoreReactor(playerScore, computerScore);
-    reportBox.innerHTML += `<p><span class="bold">Round ${roundCounter}:</span> ${roundCommentary}</p>`;
-}
-
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
         let computerSelection = getComputerChoice();
         let playerSelection = button.textContent;
         playSingleRound(playerSelection, computerSelection);
