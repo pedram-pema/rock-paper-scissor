@@ -106,3 +106,4 @@ function playSingleRound(playerSelection, computerSelection) {
 
 // TODO: Add reset button
 // How to make a random event
+// Color round recaps
