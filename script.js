@@ -1,6 +1,5 @@
 let playerScore = 0;
 let computerScore = 0;
-
 let rock = document.querySelector(".rock");
 let paper = document.querySelector(".paper");
 let scissors = document.querySelector(".scissors");
@@ -18,6 +17,13 @@ function getComputerChoice() {
     }
 }
 
+let counterText = document.querySelector(".round-counter");
+let instructionText = document.querySelector("#instruction-text");
+let scoretext = document.querySelector(".scoretext");
+let roundCounter = 0;
+let roundCommentary = '';
+let reportBox = document.querySelector(".report-box");
+
 function scoreReactor(playerScore, computerScore) {
     if (playerScore > computerScore) {
         instructionText.innerHTML = `<p>You are leading by ${playerScore-computerScore}, Good job!</p>`;
@@ -26,34 +32,24 @@ function scoreReactor(playerScore, computerScore) {
     } else {
         instructionText.innerHTML = `<p>It's tied, Keep pushing</p`;
     }
+    counterText.textContent = `Round ${roundCounter}, Go!`
+    counterText.style.fontWeight = "bold";
 }
-
-let counterText = document.querySelector(".round-counter");
-let instructionText = document.querySelector("#instruction-text");
-let scoretext = document.querySelector(".scoretext");
-let roundCounter = 0;
-let roundCommentary = '';
-let reportBox = document.querySelector(".report-box");
 
 function gameReport(playerScore, computerScore) {
     board.textContent = `You ${playerScore} - ${computerScore} Computer`;
-    scoreReactor(playerScore, computerScore);
     reportBox.innerHTML += `<p><span class="bold">Round ${roundCounter}:</span> ${roundCommentary}</p>`;
+    scoretext.style.display = "none";
+    reportBox.style.display = "initial";
 }
 
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         ++roundCounter;
-        counterText.textContent = `Round ${roundCounter}, Go!`
-        counterText.style.fontWeight = "bold";
-        // instructionText.style.display = "none";
-        // why scoreReactor doesn't work here?
-        scoretext.style.display = "none";
-        reportBox.style.display = "initial";
-
         let computerSelection = getComputerChoice();
         let playerSelection = button.textContent;
         playSingleRound(playerSelection, computerSelection);
+        scoreReactor(playerScore, computerScore);
         gameReport(playerScore, computerScore);
 
         if (playerScore === 5) {
@@ -73,28 +69,22 @@ buttons.forEach(button => {
 function playSingleRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         roundCommentary = 'Round tied!';
-    } else if (playerSelection === 'Rock' 
-                && computerSelection === 'Scissors') {
+    } else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
         playerScore++;
         roundCommentary = 'You won! Rock beats Scissors';
-    } else if (playerSelection === 'Paper' 
-                && computerSelection === 'Rock') {
+    } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
         playerScore++;
         roundCommentary = 'You won! Paper beats Rock';
-    } else if (playerSelection === 'Scissors' 
-                && computerSelection === 'Paper') {
+    } else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
         playerScore++;
         roundCommentary = 'You won! Scissors beats Paper';
-    } else if (playerSelection === 'Scissors' 
-                && computerSelection === 'Rock') {
+    } else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
         computerScore++;
         roundCommentary = 'Computer won! Rock beats Scissors';
-    } else if (playerSelection === 'Rock' 
-                && computerSelection === 'Paper') {
+    } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
         computerScore++;
         roundCommentary = 'Computer won! Paper beats Rock';
-    } else if (playerSelection === 'Paper' 
-                && computerSelection === 'Scissors') {
+    } else if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
         computerScore++;
         roundCommentary = 'Computer won! Scissors beats Paper';
     }
