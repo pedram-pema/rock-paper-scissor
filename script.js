@@ -38,9 +38,17 @@ function scoreReactor(playerScore, computerScore) {
 
 function gameReport(playerScore, computerScore) {
     board.textContent = `You ${playerScore} - ${computerScore} Computer`;
-    reportBox.innerHTML += `<p><span class="bold">Round ${roundCounter}:</span> ${roundCommentary}</p>`;
     scoretext.style.display = "none";
     reportBox.style.display = "initial";
+    reportBox.innerHTML += `<p><span class="bold">Round ${roundCounter}:</span> ${roundCommentary}</p>`;
+    let lastPara = reportBox.lastElementChild;
+    let arr = lastPara.textContent.split(" ");
+    
+    if (arr.includes("You")) {
+        lastPara.style.color = "rgb(31, 219, 37)";
+    } else if (arr.includes("Computer")) {
+        lastPara.style.color = "red";
+    }
 }
 
 buttons.forEach(button => {
@@ -90,6 +98,6 @@ function playSingleRound(playerSelection, computerSelection) {
     }
 }
 
-// TODO: Add reset button
-// How to make a random event
-// Color round recaps
+// TODO: Endgame
+// TODO: Reset button
+// TODO: Replay button
