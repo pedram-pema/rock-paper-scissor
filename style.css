@@ -107,3 +107,9 @@ header {
     line-height: 135%;
     display: none;
 }
+
+.reload {
+    font-size: 20px;
+    font-weight: bolder;
+    border-radius: 50%;
+}
