@@ -3,7 +3,7 @@ let computerScore = 0;
 let rock = document.querySelector(".rock");
 let paper = document.querySelector(".paper");
 let scissors = document.querySelector(".scissors");
-let buttons = document.querySelectorAll("button");
+let buttons = document.querySelectorAll(".game-btn");
 let board = document.querySelector(".board");
 
 function getComputerChoice() {
@@ -79,22 +79,22 @@ function playSingleRound(playerSelection, computerSelection) {
         roundCommentary = 'Round tied!';
     } else if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
         playerScore++;
-        roundCommentary = 'You won! Rock beats Scissors';
+        roundCommentary = 'You won! <span class="bold">Rock</span> beats <span class="bold">Scissors</span>';
     } else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
         playerScore++;
-        roundCommentary = 'You won! Paper beats Rock';
+        roundCommentary = 'You won! <span class="bold">Paper</span> beats <span class="bold">Rock</span';
     } else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
         playerScore++;
-        roundCommentary = 'You won! Scissors beats Paper';
+        roundCommentary = 'You won! <span class="bold">Scissors</span> beats <span class="bold">Paper</span>';
     } else if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
         computerScore++;
-        roundCommentary = 'Computer won! Rock beats Scissors';
+        roundCommentary = 'Computer won! <span class="bold">Rock</span> beats <span class="bold">Scissors</span>';
     } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
         computerScore++;
-        roundCommentary = 'Computer won! Paper beats Rock';
+        roundCommentary = 'Computer won! <span class="bold">Paper</span> beats <span class="bold">Rock</span>';
     } else if (playerSelection === 'Paper' && computerSelection === 'Scissors') {
         computerScore++;
-        roundCommentary = 'Computer won! Scissors beats Paper';
+        roundCommentary = 'Computer won! <span class="bold">Scissors</span> beats <span class="bold">Paper</span>';
     }
 }
 

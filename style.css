@@ -12,7 +12,7 @@ html {
     font-family: 'Montserrat', sans-serif;
 }
 
-.btn {
+.game-btn {
     width: 86px;
     font-family: inherit;
     font-weight: bold;
@@ -25,19 +25,16 @@ html {
     transition-duration: 0.5s;
 }
 
-.btn:hover {
+.game-btn:hover {
     background-color: white;
     color: black;
     cursor: pointer;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24);
 }
 
-.buttons {
+.buttons-container {
     background-color: rgb(211, 211, 211);
     padding: 15px 0px 30px;
-}
-
-.container {
     margin: 0px auto;
     display: flex;
     justify-content: center;
@@ -108,7 +105,7 @@ header {
     display: none;
 }
 
-.reload {
+.reload-btn {
     font-size: 20px;
     font-weight: bolder;
     border-radius: 50%;
@@ -120,7 +117,7 @@ header {
     transition-duration: 0.5s;
 }
 
-.reload:hover {
+.reload-btn:hover {
     background-color: white;
     color: black;
     cursor: pointer;
