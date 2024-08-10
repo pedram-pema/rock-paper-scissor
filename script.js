@@ -5,6 +5,7 @@ let paper = document.querySelector(".paper");
 let scissors = document.querySelector(".scissors");
 let buttons = document.querySelectorAll(".game-btn");
 let board = document.querySelector(".board");
+let reset = document.querySelector(".reload-btn");
 
 function getComputerChoice() {
     const randomChoice = Math.floor(Math.random() * 3);
@@ -74,6 +75,19 @@ buttons.forEach(button => {
     });
 });
 
+let cat = document.querySelector(".CAT");
+reset.addEventListener("click", () => {
+    playerScore = 0;
+    computerScore = 0;
+    board.textContent = "";
+    reportBox.textContent = "";
+    reportBox.style.display = "none";
+    scoretext.style.display = "initial";
+    counterText.innerHTML = '<p class="round-counter">Ready for<span class="bold"> Round 1?</span></p>';
+    roundCounter = 0;
+    instructionText.innerHTML = '<p id="instruction-text">Play your hand by selecting one of the options below:</p>'
+});
+
 function playSingleRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         roundCommentary = 'Round tied!';
@@ -97,6 +111,10 @@ function playSingleRound(playerSelection, computerSelection) {
         roundCommentary = 'Computer won! <span class="bold">Scissors</span> beats <span class="bold">Paper</span>';
     }
 }
+
+// FIX: log message
+// FIX: round counter
+// FIX: reset button appears from beginning
 
 // TODO: Endgame
 // TODO: Reset button
