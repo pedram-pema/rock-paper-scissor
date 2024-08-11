@@ -115,6 +115,7 @@ header {
     color: rgb(255, 255, 133);
     border: 2px solid lightgoldenrodyellow;
     transition-duration: 0.5s;
+    display: none;
 }
 
 .reload-btn:hover {

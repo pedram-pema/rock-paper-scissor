@@ -55,6 +55,7 @@ function gameReport(playerScore, computerScore) {
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         ++roundCounter;
+        reset.style.display = "initial";
         let computerSelection = getComputerChoice();
         let playerSelection = button.textContent;
         playSingleRound(playerSelection, computerSelection);
@@ -75,7 +76,6 @@ buttons.forEach(button => {
     });
 });
 
-let cat = document.querySelector(".CAT");
 reset.addEventListener("click", () => {
     playerScore = 0;
     computerScore = 0;
@@ -86,6 +86,7 @@ reset.addEventListener("click", () => {
     counterText.innerHTML = '<p class="round-counter">Ready for<span class="bold"> Round 1?</span></p>';
     roundCounter = 0;
     instructionText.innerHTML = '<p id="instruction-text">Play your hand by selecting one of the options below:</p>'
+    reset.style.display = "none";
 });
 
 function playSingleRound(playerSelection, computerSelection) {
@@ -114,8 +115,6 @@ function playSingleRound(playerSelection, computerSelection) {
 
 // FIX: log message
 // FIX: round counter
-// FIX: reset button appears from beginning
 
 // TODO: Endgame
-// TODO: Reset button
 // TODO: Replay button
