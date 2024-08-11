@@ -118,3 +118,4 @@ function playSingleRound(playerSelection, computerSelection) {
 
 // TODO: Endgame
 // TODO: Replay button
+// TODO: Add footer and make it full page
