@@ -27,13 +27,13 @@ let reportBox = document.querySelector(".report-box");
 
 function scoreReactor(playerScore, computerScore) {
     if (playerScore > computerScore) {
-        instructionText.innerHTML = `<p>You are leading by ${playerScore-computerScore}, Good job!</p>`;
+        instructionText.innerHTML = `<p>You are leading by ${playerScore-computerScore}, Keep it up!</p>`;
     } else if (computerScore > playerScore) {
-        instructionText.innerHTML = `<p>You are loosing by ${computerScore-playerScore}, Hurry up!</p>`;
+        instructionText.innerHTML = `<p>You are loosing by ${computerScore-playerScore}, Choose wisely!</p>`;
     } else {
         instructionText.innerHTML = `<p>It's tied, Keep pushing</p`;
     }
-    counterText.textContent = `Round ${roundCounter}, Go!`
+    counterText.textContent = `Get ready for round ${roundCounter+1}!`
     counterText.style.fontWeight = "bold";
 }
 
@@ -63,12 +63,10 @@ buttons.forEach(button => {
         gameReport(playerScore, computerScore);
 
         if (playerScore === 5) {
-            console.log("Game is decided!");
             setTimeout(() => {
                 alert("You won!");
             }, 50);
         } else if (computerScore === 5) {
-            console.log("Game is decided");
             setTimeout(() => {
                 alert("You lost!");
             }, 50);
@@ -112,10 +110,6 @@ function playSingleRound(playerSelection, computerSelection) {
         roundCommentary = 'Computer won! <span class="bold">Scissors</span> beats <span class="bold">Paper</span>';
     }
 }
-
-// FIX: log message
-// FIX: round counter
-
-// TODO: Endgame
+// TODO: Endgame with dynamic report
 // TODO: Replay button
 // TODO: Add footer and make it full page
