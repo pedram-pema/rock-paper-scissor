@@ -76,11 +76,18 @@ header {
 .livescore {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     background-color: blanchedalmond;
     padding: 15px 0px;
     box-shadow: 0px 6px 15px -5px rgba(0,0,0,0.24) inset;
+    flex-grow: 1;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .board {
