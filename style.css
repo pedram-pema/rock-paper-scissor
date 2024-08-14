@@ -151,3 +151,15 @@ main {
     justify-content: flex-end;
     padding-bottom: 15px;
 }
+
+footer {
+    background-color: rgb(119, 141, 169);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding: 8px;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+}
