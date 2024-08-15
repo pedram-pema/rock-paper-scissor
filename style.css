@@ -157,10 +157,18 @@ footer {
     color: rgb(255, 255, 255);
     font-weight: bold;
     padding: 8px;
-    text-align: center;
+    text-align: center;    
 }
 
 footer a {
     color:white;
     font-size: 20px;
+}
+i {
+    vertical-align: bottom;
+    margin-right: 4px;
+}
+
+a:hover {
+    color: black;
 }
