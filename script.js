@@ -52,6 +52,16 @@ function gameReport(playerScore, computerScore) {
     }
 }
 
+let main = document.querySelector("main");
+function endGame(playerScore, computerScore) {
+    main.innerHTML = "";
+    if (playerScore === 5) {
+        main.textContent = `You won ${playerScore} - ${computerScore}`;
+    } else {
+        main.textContent = `Computer won ${computerScore} - ${playerScore}`;
+    }
+}
+
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         ++roundCounter;
@@ -64,11 +74,11 @@ buttons.forEach(button => {
 
         if (playerScore === 5) {
             setTimeout(() => {
-                alert("You won!");
+                endGame(playerScore, computerScore);
             }, 50);
         } else if (computerScore === 5) {
             setTimeout(() => {
-                alert("You lost!");
+                endGame(playerScore, computerScore);
             }, 50);
         }
     });
