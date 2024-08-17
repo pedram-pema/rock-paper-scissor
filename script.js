@@ -6,6 +6,7 @@ let scissors = document.querySelector(".scissors");
 let buttons = document.querySelectorAll(".game-btn");
 let board = document.querySelector(".board");
 let reset = document.querySelector(".reload-btn");
+let main = document.querySelector("main");
 
 function getComputerChoice() {
     const randomChoice = Math.floor(Math.random() * 3);
@@ -52,13 +53,29 @@ function gameReport(playerScore, computerScore) {
     }
 }
 
-let main = document.querySelector("main");
 function endGame(playerScore, computerScore) {
     main.innerHTML = "";
+    board.style.display = "none";
+    let announcePara = document.createElement("p");
+    announcePara.classList.add("announcment");
+    let reactorPara = document.createElement("p");
+    reactorPara.classList.add("reactor");
+    main.appendChild(reactorPara);
+    main.appendChild(announcePara);
+    main.style.padding = "25px";
+    main.style.textAlign = "center"
+    main.style.fontSize = "24px";
+    main.style.fontWeight = "bold";
     if (playerScore === 5) {
-        main.textContent = `You won ${playerScore} - ${computerScore}`;
+        main.style.backgroundColor = "white";
+        main.style.color = "gold"
+        reactorPara.textContent = "Wow! Great job"
+        announcePara.textContent = `You won ${playerScore} - ${computerScore}`;
     } else {
-        main.textContent = `Computer won ${computerScore} - ${playerScore}`;
+        main.style.backgroundColor = "black";
+        main.style.color = "red"
+        reactorPara.textContent = "Oops! Game over"
+        announcePara.textContent = `Computer won ${computerScore} - ${playerScore}`;
     }
 }
 
@@ -72,11 +89,7 @@ buttons.forEach(button => {
         scoreReactor(playerScore, computerScore);
         gameReport(playerScore, computerScore);
 
-        if (playerScore === 5) {
-            setTimeout(() => {
-                endGame(playerScore, computerScore);
-            }, 50);
-        } else if (computerScore === 5) {
+        if (playerScore === 5 || computerScore === 5) {
             setTimeout(() => {
                 endGame(playerScore, computerScore);
             }, 50);
@@ -120,6 +133,4 @@ function playSingleRound(playerSelection, computerSelection) {
         roundCommentary = 'Computer won! <span class="bold">Scissors</span> beats <span class="bold">Paper</span>';
     }
 }
-// TODO: Endgame with dynamic report
 // TODO: Replay button
-// TODO: Add footer and make it full page
