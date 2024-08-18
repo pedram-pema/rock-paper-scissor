@@ -57,15 +57,16 @@ function endGame(playerScore, computerScore) {
     main.innerHTML = "";
     board.style.display = "none";
     let announcePara = document.createElement("p");
-    announcePara.classList.add("announcment");
     let reactorPara = document.createElement("p");
-    reactorPara.classList.add("reactor");
     main.appendChild(reactorPara);
     main.appendChild(announcePara);
     main.style.padding = "25px";
     main.style.textAlign = "center"
     main.style.fontSize = "24px";
     main.style.fontWeight = "bold";
+    let replayBtn = document.createElement("button");
+    replayBtn.textContent = "Replay";
+    main.appendChild(replayBtn);
     if (playerScore === 5) {
         main.style.backgroundColor = "white";
         main.style.color = "gold"
