@@ -7,6 +7,7 @@ let buttons = document.querySelectorAll(".game-btn");
 let board = document.querySelector(".board");
 let reset = document.querySelector(".reload-btn");
 let main = document.querySelector("main");
+let interactive = document.querySelector(".interactive");
 
 function getComputerChoice() {
     const randomChoice = Math.floor(Math.random() * 3);
@@ -53,31 +54,51 @@ function gameReport(playerScore, computerScore) {
     }
 }
 
+function resetState() {
+    playerScore = 0;
+    computerScore = 0;
+    board.textContent = "";
+    reportBox.textContent = "";
+    reportBox.style.display = "none";
+    scoretext.style.display = "initial";
+    counterText.innerHTML = '<p class="round-counter">Ready for<span class="bold"> Round 1?</span></p>';
+    roundCounter = 0;
+    instructionText.innerHTML = '<p id="instruction-text">Play your hand by selecting one of the options below:</p>'
+    reset.style.display = "none";
+}
+
 function endGame(playerScore, computerScore) {
-    main.innerHTML = "";
+    interactive.style.display = "none";
     board.style.display = "none";
+    let endGameDiv = document.createElement('div');
     let announcePara = document.createElement("p");
     let reactorPara = document.createElement("p");
-    main.appendChild(reactorPara);
-    main.appendChild(announcePara);
-    main.style.padding = "25px";
-    main.style.textAlign = "center"
-    main.style.fontSize = "24px";
-    main.style.fontWeight = "bold";
+    endGameDiv.appendChild(reactorPara);
+    endGameDiv.appendChild(announcePara);
+    endGameDiv.style.padding = "25px";
+    endGameDiv.style.textAlign = "center"
+    endGameDiv.style.fontSize = "24px";
+    endGameDiv.style.fontWeight = "bold";
     let replayBtn = document.createElement("button");
     replayBtn.textContent = "Replay";
-    main.appendChild(replayBtn);
+    endGameDiv.appendChild(replayBtn);
+    main.appendChild(endGameDiv);
     if (playerScore === 5) {
-        main.style.backgroundColor = "white";
-        main.style.color = "gold"
+        endGameDiv.style.backgroundColor = "white";
+        endGameDiv.style.color = "gold"
         reactorPara.textContent = "Wow! Great job"
         announcePara.textContent = `You won ${playerScore} - ${computerScore}`;
     } else {
-        main.style.backgroundColor = "black";
-        main.style.color = "red"
+        endGameDiv.style.backgroundColor = "black";
+        endGameDiv.style.color = "red"
         reactorPara.textContent = "Oops! Game over"
         announcePara.textContent = `Computer won ${computerScore} - ${playerScore}`;
     }
+    replayBtn.addEventListener("click", () => {
+        main.removeChild(endGameDiv);
+        interactive.style.display = "initial";
+        resetState();
+    });
 }
 
 buttons.forEach(button => {
@@ -99,16 +120,7 @@ buttons.forEach(button => {
 });
 
 reset.addEventListener("click", () => {
-    playerScore = 0;
-    computerScore = 0;
-    board.textContent = "";
-    reportBox.textContent = "";
-    reportBox.style.display = "none";
-    scoretext.style.display = "initial";
-    counterText.innerHTML = '<p class="round-counter">Ready for<span class="bold"> Round 1?</span></p>';
-    roundCounter = 0;
-    instructionText.innerHTML = '<p id="instruction-text">Play your hand by selecting one of the options below:</p>'
-    reset.style.display = "none";
+    
 });
 
 function playSingleRound(playerSelection, computerSelection) {
