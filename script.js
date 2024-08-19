@@ -64,7 +64,7 @@ function resetState() {
     counterText.innerHTML = '<p class="round-counter">Ready for<span class="bold"> Round 1?</span></p>';
     roundCounter = 0;
     instructionText.innerHTML = '<p id="instruction-text">Play your hand by selecting one of the options below:</p>'
-    reset.style.display = "none";
+    // reset.style.display = "none";
 }
 
 function endGame(playerScore, computerScore) {
@@ -104,7 +104,8 @@ function endGame(playerScore, computerScore) {
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         ++roundCounter;
-        reset.style.display = "initial";
+        // reset.style.display = "initial";
+        reset.disabled = "false";
         let computerSelection = getComputerChoice();
         let playerSelection = button.textContent;
         playSingleRound(playerSelection, computerSelection);
@@ -117,10 +118,6 @@ buttons.forEach(button => {
             }, 50);
         }
     });
-});
-
-reset.addEventListener("click", () => {
-    
 });
 
 function playSingleRound(playerSelection, computerSelection) {
