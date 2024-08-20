@@ -70,9 +70,11 @@ function resetState() {
 function endGame(playerScore, computerScore) {
     interactive.style.display = "none";
     board.style.display = "none";
+
     let endGameDiv = document.createElement('div');
     let announcePara = document.createElement("p");
     let reactorPara = document.createElement("p");
+
     endGameDiv.appendChild(reactorPara);
     endGameDiv.appendChild(announcePara);
     endGameDiv.style.padding = "25px";
@@ -83,6 +85,7 @@ function endGame(playerScore, computerScore) {
     replayBtn.textContent = "Replay";
     endGameDiv.appendChild(replayBtn);
     main.appendChild(endGameDiv);
+    
     if (playerScore === 5) {
         endGameDiv.style.backgroundColor = "white";
         endGameDiv.style.color = "gold"
@@ -104,8 +107,7 @@ function endGame(playerScore, computerScore) {
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         ++roundCounter;
-        // reset.style.display = "initial";
-        reset.disabled = "false";
+        reset.style.display = "initial";
         let computerSelection = getComputerChoice();
         let playerSelection = button.textContent;
         playSingleRound(playerSelection, computerSelection);
@@ -118,6 +120,19 @@ buttons.forEach(button => {
             }, 50);
         }
     });
+});
+
+reset.addEventListener("click", () => {
+    playerScore = 0;
+    computerScore = 0;
+    board.textContent = "";
+    reportBox.textContent = "";
+    reportBox.style.display = "none";
+    scoretext.style.display = "initial";
+    counterText.innerHTML = '<p class="round-counter">Ready for<span class="bold"> Round 1?</span></p>';
+    roundCounter = 0;
+    instructionText.innerHTML = '<p id="instruction-text">Play your hand by selecting one of the options below:</p>'
+    // reset.style.display = "none";    
 });
 
 function playSingleRound(playerSelection, computerSelection) {
