@@ -108,6 +108,7 @@ buttons.forEach(button => {
     button.addEventListener("click", () => {
         ++roundCounter;
         reset.style.display = "initial";
+        reset.disabled = false;
         let computerSelection = getComputerChoice();
         let playerSelection = button.textContent;
         playSingleRound(playerSelection, computerSelection);
@@ -132,7 +133,9 @@ reset.addEventListener("click", () => {
     counterText.innerHTML = '<p class="round-counter">Ready for<span class="bold"> Round 1?</span></p>';
     roundCounter = 0;
     instructionText.innerHTML = '<p id="instruction-text">Play your hand by selecting one of the options below:</p>'
-    // reset.style.display = "none";    
+    // reset.style.display = "none";
+    console.log("clicked");
+    reset.disabled = true;
 });
 
 function playSingleRound(playerSelection, computerSelection) {
