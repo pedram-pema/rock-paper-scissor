@@ -125,11 +125,16 @@ body {
     /* display: none; */
 }
 
-.reload-btn:hover {
+.reload-btn:not(:disabled):hover {
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
     cursor: pointer;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24);
+}
+
+.reload-btn:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
 }
 
 .interactive {
