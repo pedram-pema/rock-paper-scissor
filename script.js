@@ -64,7 +64,6 @@ function resetState() {
     counterText.innerHTML = '<p class="round-counter">Ready for<span class="bold"> Round 1?</span></p>';
     roundCounter = 0;
     instructionText.innerHTML = '<p id="instruction-text">Play your hand by selecting one of the options below:</p>'
-    // reset.style.display = "none";
 }
 
 function endGame(playerScore, computerScore) {
@@ -72,6 +71,7 @@ function endGame(playerScore, computerScore) {
     board.style.display = "none";
 
     let endGameDiv = document.createElement('div');
+    endGameDiv.style.minHeight = "170px";
     let announcePara = document.createElement("p");
     let reactorPara = document.createElement("p");
 
@@ -99,7 +99,8 @@ function endGame(playerScore, computerScore) {
     }
     replayBtn.addEventListener("click", () => {
         main.removeChild(endGameDiv);
-        interactive.style.display = "initial";
+        interactive.style.display = "flex";
+        reset.disabled = true;
         resetState();
     });
 }
@@ -133,7 +134,6 @@ reset.addEventListener("click", () => {
     counterText.innerHTML = '<p class="round-counter">Ready for<span class="bold"> Round 1?</span></p>';
     roundCounter = 0;
     instructionText.innerHTML = '<p id="instruction-text">Play your hand by selecting one of the options below:</p>'
-    // reset.style.display = "none";
     console.log("clicked");
     reset.disabled = true;
 });
@@ -161,4 +161,3 @@ function playSingleRound(playerSelection, computerSelection) {
         roundCommentary = 'Computer won! <span class="bold">Scissors</span> beats <span class="bold">Paper</span>';
     }
 }
-// TODO: Replay button

@@ -117,12 +117,10 @@ body {
     font-weight: bolder;
     border-radius: 50%;
     display: inline;
-    /* align-self: center; */
     background-color: rgb(228, 40, 40);
     color: rgb(0, 0, 0);
     border: 2px solid rgb(0, 0, 0);
     transition-duration: 0.5s;
-    /* display: none; */
 }
 
 .reload-btn:not(:disabled):hover {
