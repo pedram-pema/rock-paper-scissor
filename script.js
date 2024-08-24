@@ -82,6 +82,7 @@ function endGame(playerScore, computerScore) {
     endGameDiv.style.fontSize = "24px";
     endGameDiv.style.fontWeight = "bold";
     let replayBtn = document.createElement("button");
+    replayBtn.classList.add("btn-style");
     replayBtn.textContent = "Replay";
     endGameDiv.appendChild(replayBtn);
     main.appendChild(endGameDiv);

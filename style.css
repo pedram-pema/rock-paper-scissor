@@ -12,7 +12,7 @@ html {
     font-family: 'Montserrat', sans-serif;
 }
 
-.game-btn {
+.btn-style {
     width: 86px;
     font-family: inherit;
     font-weight: bold;
@@ -25,7 +25,7 @@ html {
     transition-duration: 0.5s;
 }
 
-.game-btn:hover {
+.btn-style:hover {
     background-color: white;
     color: black;
     cursor: pointer;
