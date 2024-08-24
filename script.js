@@ -102,6 +102,7 @@ function endGame(playerScore, computerScore) {
         main.removeChild(endGameDiv);
         interactive.style.display = "flex";
         reset.disabled = true;
+        board.style.display = "initial";
         resetState();
     });
 }
