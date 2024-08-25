@@ -79,9 +79,10 @@ function endGame(playerScore, computerScore) {
     endGameDiv.appendChild(announcePara);
     endGameDiv.style.padding = "25px";
     endGameDiv.style.textAlign = "center"
-    endGameDiv.style.fontSize = "24px";
+    endGameDiv.style.fontSize = "30px";
     endGameDiv.style.fontWeight = "bold";
     let replayBtn = document.createElement("button");
+    replayBtn.style.marginTop = "10px";
     replayBtn.classList.add("btn-style");
     replayBtn.textContent = "Replay";
     endGameDiv.appendChild(replayBtn);
