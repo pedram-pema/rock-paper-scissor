@@ -89,13 +89,13 @@ function endGame(playerScore, computerScore) {
     main.appendChild(endGameDiv);
     
     if (playerScore === 5) {
-        endGameDiv.style.backgroundColor = "white";
-        endGameDiv.style.color = "gold"
+        endGameDiv.style.backgroundColor = "rgb(0, 53, 102)";
+        endGameDiv.style.color = "rgb(255,195, 0)";
         reactorPara.textContent = "Wow! Great job"
         announcePara.textContent = `You won ${playerScore} - ${computerScore}`;
     } else {
-        endGameDiv.style.backgroundColor = "black";
-        endGameDiv.style.color = "red"
+        endGameDiv.style.backgroundColor = "rgb(141, 153, 174)";
+        endGameDiv.style.color = "rgb(239, 35, 60)";
         reactorPara.textContent = "Oops! Game over"
         announcePara.textContent = `Computer won ${computerScore} - ${playerScore}`;
     }
