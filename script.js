@@ -44,6 +44,7 @@ function gameReport(playerScore, computerScore) {
     scoretext.style.display = "none";
     reportBox.style.display = "initial";
     reportBox.innerHTML += `<p><span class="bold">Round ${roundCounter}:</span> ${roundCommentary}</p>`;
+    reportBox.style.boxShadow = "5px 10px 18px #888888";
     let lastPara = reportBox.lastElementChild;
     let arr = lastPara.textContent.split(" ");
     
